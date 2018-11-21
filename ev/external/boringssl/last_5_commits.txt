@@ -1,0 +1,78 @@
+commit ec55dc15d3a39e5f1a58bfd79148729f38f6acb4
+Author: David Benjamin <davidben@google.com>
+Date:   Mon Mar 5 02:24:32 2018 -0500
+
+    Update tools.
+    
+    Also remove the -Wtautological-constant-compare logic. I believe Clang
+    has since removed that problematic warning from -Wall and that check was
+    causing problems when we were embedded as a subproject in a project that
+    didn't set CMP0025.
+    
+    (In that case, by the time our build file ran, the compiler had already
+    been detected and the damage done. This unfortunately means the next
+    Clang version check will hit the same issue, but let's deal with that
+    when we get there.)
+    
+    Change-Id: Iea5f262899b74c5b84f707f4cf4ac4b3540c4acb
+    Reviewed-on: https://boringssl-review.googlesource.com/26375
+    Reviewed-by: Steven Valdez <svaldez@google.com>
+    Commit-Queue: David Benjamin <davidben@google.com>
+    CQ-Verified: CQ bot account: commit-bot@chromium.org <commit-bot@chromium.org>
+
+commit 929a9d7d425ff219bc0480db5f877cbd99f69f91
+Author: David Benjamin <davidben@google.com>
+Date:   Fri Mar 2 19:17:23 2018 -0500
+
+    Don't bother retrying in bn_blinding_create_param.
+    
+    The probability of stumbling on a non-invertible b->A is negligible;
+    it's equivalent to accidentally factoring the RSA key. Relatedly,
+    document the slight caveat in BN_mod_inverse_blinded.
+    
+    Change-Id: I308d17d12f5d6a12c444dda8c8fcc175ef2f5d45
+    Reviewed-on: https://boringssl-review.googlesource.com/26344
+    Commit-Queue: David Benjamin <davidben@google.com>
+    CQ-Verified: CQ bot account: commit-bot@chromium.org <commit-bot@chromium.org>
+    Reviewed-by: Adam Langley <agl@google.com>
+
+commit f8058d41147543d6ad9a5ae5d70e7d19198bbe33
+Author: David Benjamin <davidben@google.com>
+Date:   Thu Mar 1 19:11:14 2018 -0500
+
+    Add M=8 L=2 AES-128-CCM as well.
+    
+    The Bluetooth Mesh spec uses both apparently. Also extract a pile of
+    test vectors from that document (thanks to Kyle Lund for showing me
+    which to extract).
+    
+    Change-Id: I04a04fafb7386ca28adfe1446fa388e841778931
+    Reviewed-on: https://boringssl-review.googlesource.com/26324
+    Commit-Queue: Steven Valdez <svaldez@google.com>
+    Reviewed-by: Steven Valdez <svaldez@google.com>
+    CQ-Verified: CQ bot account: commit-bot@chromium.org <commit-bot@chromium.org>
+
+commit 8df8e64205d0f8334ee4d403306bfcd4287004b0
+Author: Adam Langley <agl@google.com>
+Date:   Wed Feb 28 13:35:39 2018 -0800
+
+    Record whether dummy PQ padding was used.
+    
+    On reflection, I think we'll need to note whether dummy PQ padding was
+    echoed on a given connection. Otherwise measurements in Chrome will be
+    mixed with cases where people have MITM proxies that ignored the
+    extension, or possibly Google frontends that haven't been updated.
+    
+    Therefore this change will be used to filter latency measurements in
+    Chrome to only include those where the extension was echoed and we'll
+    measure at levels of 1 byte (for control), 400 bytes, and 1100 bytes.
+    
+    This also makes it an error if the server didn't echo an extension of
+    the same length as was sent.
+    
+    Change-Id: Ib2a0b29cfb8719a75a28f3cf96710c57d88eaa68
+    Reviewed-on: https://boringssl-review.googlesource.com/26284
+    Commit-Queue: Adam Langley <agl@google.com>
+    CQ-Verified: CQ bot account: commit-bot@chromium.org <commit-bot@chromium.org>
+    Reviewed-by: David Benjamin <davidben@google.com>
+

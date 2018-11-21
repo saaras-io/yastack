@@ -1,0 +1,28 @@
+commit 930a67cf7ba41b9d9436ad7a1be70a5d5ff6e1fc
+Author: Kent Wang <pragkent@gmail.com>
+Date:   Thu Feb 22 00:58:21 2018 +0800
+
+    Fix pattern rule in repeated and map field (#58)
+    
+    * Fix pattern rule in repeated and map field
+    
+    Add pattern variable declaration when repeated.items, map.keys
+    or map.values contains string rule with pattern.
+    
+    * Add test cases to executor
+
+commit 39f5c47d78232ff6955731cc49773a9ca9a1dcff
+Author: Chris Roche <github@rodaine.com>
+Date:   Thu Feb 15 13:35:13 2018 -0800
+
+    Vendor: update dependencies (#60)
+    
+    * update vendored dependencies
+    
+    * fix sha
+    
+    * no build files in gen'd go directories
+    
+    * gazelle added an extra go_binary rule
+
+

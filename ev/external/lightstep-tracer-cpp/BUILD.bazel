@@ -1,0 +1,64 @@
+cc_library(
+    name = "lightstep_tracer",
+    srcs = glob([
+        "src/*.cpp",
+        "src/*.h",
+    ]),
+    hdrs = glob(["include/lightstep/*.h"]) + [
+        ":include/lightstep/config.h",
+        ":include/lightstep/version.h",
+    ],
+    strip_include_prefix = "include",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//lightstep-tracer-common:collector_proto_cc",
+        "//lightstep-tracer-common:lightstep_carrier_proto_cc",
+        ":3rd_party_base64",
+        ":3rd_party_catch",
+        # https://github.com/opentracing/opentracing-cpp
+        "@io_opentracing_cpp//:opentracing",
+    ],
+)
+
+genrule(
+    name = "generate_version_h",
+    srcs = glob([
+        "*",
+        "cmake/**/*",
+        "example/**/*",
+        "src/*",
+        "3rd_party/**/*",
+    ]),
+    outs = [
+        "include/lightstep/config.h",
+        "include/lightstep/version.h",
+    ],
+    cmd = """
+    TEMP_DIR=$$(mktemp -d)
+    CONFIG_H_OUT=$${PWD}/$(location :include/lightstep/config.h)
+    VERSION_H_OUT=$${PWD}/$(location :include/lightstep/version.h)
+    LIGHTSTEP_ROOT=$$(dirname $${PWD}/$(location :CMakeLists.txt))
+    cd $$TEMP_DIR
+    cmake \\
+        -DWITH_GRPC=OFF \\
+        -DHEADERS_ONLY=ON \\
+        -L \\
+        $$LIGHTSTEP_ROOT
+    mv include/lightstep/config.h $$CONFIG_H_OUT
+    mv include/lightstep/version.h $$VERSION_H_OUT
+    rm -rf $$TEMP_DIR
+    """,
+)
+
+cc_library(
+    name = "3rd_party_base64",
+    srcs = glob(["3rd_party/base64/src/*.cpp"]),
+    hdrs = glob(["3rd_party/base64/include/**/*.h"]),
+    strip_include_prefix = "3rd_party/base64/include",
+)
+
+cc_library(
+    name = "3rd_party_catch",
+    hdrs = glob(["3rd_party/catch/include/**/*.hpp"]),
+    strip_include_prefix = "3rd_party/catch/include",
+)

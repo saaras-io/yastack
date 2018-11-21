@@ -1,0 +1,52 @@
+commit 43863938377a9ea1399c0596269e0890b5c5515a
+Merge: deace25 d4af64c
+Author: Gennadiy Civil <gennadiycivil@users.noreply.github.com>
+Date:   Wed Sep 20 14:32:57 2017 -0400
+
+    Merge pull request #1265 from bkircher/redundant-decl
+    
+    Remove redundant declaration
+
+commit d4af64ca13173c76f6da1aa32dcda7dd3abeb522
+Author: Benjamin Kircher <benjamin.kircher@gmail.com>
+Date:   Sat Sep 16 11:51:36 2017 +0200
+
+    Remove redundant declaration
+    
+    TempDir() function is declared twice, once in `internal/gtest-port.h`
+    and a second time in `gtest.h`.
+    
+    Fixes a warning with GCC when -Wredundant-decls is given.
+
+commit deace2546ef4ff8f3e6349ec4f26d414753818c3
+Merge: b1dd47c b55abc3
+Author: Gennadiy Civil <gennadiycivil@users.noreply.github.com>
+Date:   Thu Sep 14 22:30:24 2017 -0400
+
+    Merge pull request #1259 from ly2048/patch-1
+    
+    Add explicit `CMAKE_DEBUG_POSTFIX` option
+
+commit b55abc3fe08a6b89fb22dda5793decad5f2faa1b
+Merge: 9681b4c b1dd47c
+Author: ly2048 <31530391+ly2048@users.noreply.github.com>
+Date:   Fri Sep 15 10:24:09 2017 +0800
+
+    Merge branch 'master' into patch-1
+
+commit b1dd47c278a7f82406d2d6d683a1a945e314c0e5
+Merge: 20e62ad 31b6155
+Author: Gennadiy Civil <gennadiycivil@users.noreply.github.com>
+Date:   Thu Sep 14 11:10:51 2017 -0400
+
+    Merge pull request #1255 from yursha/patch-1
+    
+    Fix ellipsis position in examples
+
+commit 9681b4c8e6aae36ac1d0ae0c4e99bdf013b41913
+Author: ly2048 <31530391+ly2048@users.noreply.github.com>
+Date:   Thu Sep 14 13:22:04 2017 +0800
+
+    Add explicit `CMAKE_DEBUG_POSTFIX` option
+    
+    Enable generating different library name to be compatible with CMake's `FindGTest`.

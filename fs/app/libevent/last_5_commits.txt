@@ -1,0 +1,58 @@
+commit e7ff4ef2b4fc950a765008c18e74281cdb5e7668
+Merge: 59e217d 9b63b5d
+Author: Azat Khuzhin <a3at.mail@gmail.com>
+Date:   Thu Jan 26 02:37:15 2017 +0300
+
+    Merge branch 'release-2.1.8-stable-pull'
+    
+    * release-2.1.8-stable-pull:
+      Bump version to 2.1.8-stable everywhere
+      VERSION_INFO should me equal to library version
+      Bump whatsnew-2.1 document
+      Update ChangeLog for 2.1.8-stable
+      README: update AUTHORS
+
+commit 9b63b5d41037bcdc54fbc5e45c054de751b7e0ac
+Author: Azat Khuzhin <a3at.mail@gmail.com>
+Date:   Sun Jan 22 18:21:57 2017 +0300
+
+    Bump version to 2.1.8-stable everywhere
+    
+    P.S. in referenced commit I made a mistake and instead of *-rc* I wrote
+    *-beta*.
+    
+    See-also: f4489b8323cda0bf8eed7c1353911a852d7a947c ("Bump version to
+    2.1.7-beta everywhere")
+
+commit bed52ff6ff0220520c28d3e0878d7d6a793aa506
+Author: Azat Khuzhin <a3at.mail@gmail.com>
+Date:   Sun Jan 22 16:38:01 2017 +0300
+
+    VERSION_INFO should me equal to library version
+    
+    This reverts commit 43243b9d55efcd0e6e2767a5c45bc7da46cff60c (I
+    shouldn't do this).
+
+commit 227bfe562600a1c2c6cf5aed2dbff83d43bfc16a
+Author: Azat Khuzhin <a3at.mail@gmail.com>
+Date:   Sun Jan 22 16:58:12 2017 +0300
+
+    Bump whatsnew-2.1 document
+
+commit d9eb42e0822453c0b78437b00a432d3705eb86d8
+Author: Azat Khuzhin <a3at.mail@gmail.com>
+Date:   Sun Jan 22 16:16:58 2017 +0300
+
+    Update ChangeLog for 2.1.8-stable
+    
+    $ git log --format='    o %s (%h %cN)' HEAD...refs/tags/release-2.1.7-rc
+
+commit 50824ae2a0614e5ede46369eb4d08d1a9dcd0044
+Author: Azat Khuzhin <a3at.mail@gmail.com>
+Date:   Sun Jan 22 16:14:30 2017 +0300
+
+    README: update AUTHORS
+    
+    $ git log --format='%an' HEAD...refs/tags/release-2.1.6-beta | sort -u | xargs -n1 -i bash -c 'fgrep -q "{}" README.md || echo {}'
+
+

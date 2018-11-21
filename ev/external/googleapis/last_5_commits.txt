@@ -1,0 +1,68 @@
+commit d6f78d948c53f3b400bb46996eb3084359914f9b
+Author: ethanbao <cbao@google.com>
+Date:   Thu Oct 12 12:33:48 2017 -0700
+
+    Clean up artman_genomics.yaml (#477)
+
+commit 7c3688bdfc53b25140764ea2cf306a9c2fac8bc1
+Author: Google APIs <googleapis-publisher@google.com>
+Date:   Thu Oct 12 11:34:29 2017 -0700
+
+    Synchronize new proto changes.
+
+commit b5d074169631231b5f2d34f2e3e21e24f29bc21b
+Author: Google APIs <googleapis-publisher@google.com>
+Date:   Wed Oct 11 22:01:25 2017 -0700
+
+    Synchronize new proto changes.
+
+commit a8f550c498ef2b731e3eba40445b07c9319c7e15
+Author: Google APIs <googleapis-publisher@google.com>
+Date:   Tue Oct 10 21:03:50 2017 -0700
+
+    Synchronize new proto changes.
+
+commit 620947d5dc99cab4f255474a85e504433a52d8a5
+Author: Google APIs <googleapis-publisher@google.com>
+Date:   Tue Oct 10 17:04:10 2017 -0700
+
+    Synchronize new proto changes.
+
+commit e812b177194fd0468a03d3bfefa4d7283f2a922f
+Author: Google APIs <googleapis-publisher@google.com>
+Date:   Tue Oct 10 15:03:16 2017 -0700
+
+    Synchronize new proto changes.
+
+commit 6262c4257f7744a347b27af09805da6bea7faa57
+Author: ethanbao <cbao@google.com>
+Date:   Mon Oct 9 14:07:21 2017 -0700
+
+    Fix a flaw in smoketests CI (#475)
+    
+    * Run artman smoketests in circleci
+    
+    * Only execute smoketests using circleci on master branch
+    
+    * Specify additional env var so that the artman docker container that runs the smoketests knows to use the cached gapic yamls instead of the latest ones. This will match the behavior of .
+
+commit 438e7d655bfd1b46f212c1a1cbac7977e094bf74
+Author: ethanbao <cbao@google.com>
+Date:   Mon Oct 9 12:26:59 2017 -0700
+
+    Run artman smoketests in googleapis circleci project (#474)
+    
+    * Run artman smoketests in circleci
+    * Only execute smoketests using circleci on master branch
+
+commit eeafb5d8d855d8b96209997f6504bb4c788f5ff8
+Author: Google APIs <googleapis-publisher@google.com>
+Date:   Fri Oct 6 10:02:22 2017 -0700
+
+    Synchronize new proto changes.
+
+commit 76ae665a5c2d49a344fb5e50556d540fd08101f4
+Author: Google APIs <googleapis-publisher@google.com>
+Date:   Thu Oct 5 13:29:15 2017 -0700
+
+    Synchronize new proto changes.

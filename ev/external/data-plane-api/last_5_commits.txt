@@ -1,0 +1,41 @@
+commit 15dc537b6078988ac6f7de5ffec697e876a4652f
+Author: Snow Pettersen <aickck@gmail.com>
+Date:   Fri Mar 2 14:06:38 2018 -0500
+
+    tcp proxy: add metadata_match to tcp proxy config (#520)
+    
+    * tcp proxy: add metadata_match to tcp proxy config
+    
+    This should allow the tcp proxy to target a specific subset of endpoints
+    in a cluster by matching on the metadata, similar to what is currently
+    possible in the http_connection_manager filter.
+    
+    See https://github.com/envoyproxy/envoy/issues/2696
+    
+    Signed-off-by: Snow Pettersen <snowp@squareup.com>
+
+commit d49461cb298e06251d10779a006624237099fda3
+Author: Constance Caramanolis <ccaramanolis@lyft.com>
+Date:   Thu Mar 1 21:03:07 2018 -0800
+
+    Remove reference to V1 configuration. (#519)
+    
+    V1 configuration does not support ip tagging. This pr cleans references to IP Tagging in V1 configs.
+    
+    Signed-off-by: Constance Caramanolis <ccaramanolis@lyft.com>
+
+commit 6defada5735de6998aa0fdcfb4d3aaa5e48972bd
+Author: Kuat <kyessenov@users.noreply.github.com>
+Date:   Thu Mar 1 14:14:13 2018 -0800
+
+    add equals to percent (#518)
+    
+    Signed-off-by: Kuat Yessenov <kuat@google.com>
+
+commit e9c53c404b0105cd42cb4cf015251e5aa9187cd3
+Author: Matt Klein <mklein@lyft.com>
+Date:   Thu Mar 1 13:36:33 2018 -0800
+
+    access log: runtime filter enhancements (#490)
+    
+    1) Add ability to runtime filter to configure default, divisor, and

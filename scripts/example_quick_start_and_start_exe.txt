@@ -1,0 +1,2 @@
+i../scripts/quick_start_dpdk_setup.sh --dpdkpath ../dpdk/ --interface-1 00:05.0 --interface-2 00:06.0 --igbuio-path ./dpdk/kmod/igb_uio.ko --rtekni-path ./dpdk/kmod/rte_kni.ko
+./exe -p 0 -t primary -f /home/ubuntu/falcon3/falcon/fs/config/config_1_core_ena5.ini -c /home/ubuntu/falcon3/falcon/ev/configs/direct_response.yaml -l critical --v2-config-only

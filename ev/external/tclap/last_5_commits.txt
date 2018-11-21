@@ -1,0 +1,60 @@
+commit 3627d9402e529770df9b0edf2aa8c0e0d6c6bb41
+Author: mes5k <mes5k>
+Date:   Sat Apr 16 22:31:18 2011 +0000
+
+    updated changelog, news, docs, and added tests for flag and name defines
+
+commit 122b50e26dcea38bcb7814a0846a528d8b23732a
+Author: mes5k <mes5k>
+Date:   Mon Apr 11 00:08:41 2011 +0000
+
+    patch that allows arg start strings to be pound defined to easily conform to different platforms
+
+commit d0cddc3183a7f7b53899b1c75e5d457bf3a1b5ad
+Author: mes5k <mes5k>
+Date:   Sat Apr 9 18:58:33 2011 +0000
+
+    being slightly more precise about what we clean
+
+commit 89f4aacf98d304c21d1ccb49d1df4f6e1cc676f2
+Author: mes5k <mes5k>
+Date:   Sat Apr 9 18:30:32 2011 +0000
+
+    fixed shadow variable name problem
+
+commit cbc24a3b584f4ae14fe5d5a581a28923bf68491c
+Author: mes5k <mes5k>
+Date:   Sat Apr 9 18:05:35 2011 +0000
+
+    fixed minor memory leak
+
+commit 95dad7832ba1f13c9b056df9c986cee1daa92805
+Author: macbishop <macbishop>
+Date:   Tue Mar 15 11:26:48 2011 +0000
+
+    Check if compiler supports Weffec++ and if so use it (fixes
+    compilation issue with e.g. SunStudio compiler)
+
+commit e2eb7b522e335a8a3e51deca2dbfdffeec060ef5
+Author: macbishop <macbishop>
+Date:   Sat Jan 15 17:45:17 2011 +0000
+
+    Updated documentation for ArgTraits to reference StringLike and ValueLike classes.
+
+commit 234fe9c7ff1a3a6626f04ae3227eef5996a8b3fd
+Author: macbishop <macbishop>
+Date:   Sat Jan 15 17:32:08 2011 +0000
+
+    Added explicit cast to supress warning about deprecated conversion from string constant to char*
+
+commit ff7b9f89aa127bc4b607cf66066fec2f2f555877
+Author: mes5k <mes5k>
+Date:   Mon Jan 3 01:18:49 2011 +0000
+
+    now using a slightly different variable for doc install to support out-of-tree builds
+
+commit febbb86d9d3f7f43957dce2a230d3afc7e1cfbda
+Author: mes5k <mes5k>
+Date:   Mon Jan 3 00:37:07 2011 +0000
+
+    bumped version number to 1.2.1

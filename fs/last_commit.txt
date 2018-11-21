@@ -1,0 +1,119 @@
+[4/12/2018] Begin: Last commit
+
+From f2602fcff6587dff31cd45fdd0cfb157f75e1909 Mon Sep 17 00:00:00 2001
+From: chenwei <chadwill@aliyun.com>
+Date: Tue, 10 Apr 2018 17:28:10 +0800
+Subject: [PATCH] Nginx: bugfix, shouldnot pollute `socket type`
+
+---
+ app/nginx-1.11.10/src/event/ngx_event_connect.c | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+
+diff --git a/app/nginx-1.11.10/src/event/ngx_event_connect.c b/app/nginx-1.11.10/src/event/ngx_event_connect.c
+index 4343340c..64c0ea1e 100644
+--- a/app/nginx-1.11.10/src/event/ngx_event_connect.c
++++ b/app/nginx-1.11.10/src/event/ngx_event_connect.c
+@@ -44,12 +44,13 @@ ngx_event_connect_peer(ngx_peer_connection_t *pc)
+       to explicitly call the needed socket() function.
+     */
+     if (!pc->belong_to_host) {
+-        type |= SOCK_FSTACK;
++        s = ngx_socket(pc->sockaddr->sa_family, type | SOCK_FSTACK, 0);
++    } else {
++        s = ngx_socket(pc->sockaddr->sa_family, type, 0);
+     }
+-#endif
+-
++#else
+     s = ngx_socket(pc->sockaddr->sa_family, type, 0);
+-
++#endif
+ 
+     ngx_log_debug2(NGX_LOG_DEBUG_EVENT, pc->log, 0, "%s socket %d",
+                    (type == SOCK_STREAM) ? "stream" : "dgram", s);
+
+
+[4/12/2018] End: Last commit
+
+
+Note that for fs, we only look at merged commits from master branch.
+
+There are three types of commits as of writing this comment on 4/12/2018
+(1) Commits that don't start with a "Merge"
+(2) Commits that start with a "Merge" but are merged from chadwill/develop
+(3) Commits that start with a "Merge" but are merged from chadwill/master
+
+We are only interested in (3) of commits
+
+For instance the one below is not a merged commit and isn't present in our tree.
+
+############## Commited but not merged ########################
+git show -p 0a6b81772e4a8365bb1374ed5fcbf2d37cb78249
+commit 0a6b81772e4a8365bb1374ed5fcbf2d37cb78249
+Author: chenwei <chadwill@aliyun.com>
+Date:   Wed Jan 31 09:02:25 2018 +0800
+
+    Nginx : Fix Compile error
+    Fix compile error when configure nginx with --with-stream
+
+diff --git a/app/nginx-1.11.10/src/stream/ngx_stream_core_module.c b/app/nginx-1.11.10/src/stream/ngx_stream_core_module.c
+index 49592de..734a9d2 100644
+--- a/app/nginx-1.11.10/src/stream/ngx_stream_core_module.c
++++ b/app/nginx-1.11.10/src/stream/ngx_stream_core_module.c
+@@ -59,10 +59,10 @@ static ngx_command_t  ngx_stream_core_commands[] = {
+ #if (NGX_HAVE_FSTACK)
+ 
+     { ngx_string("kernel_network_stack"),
+-      NGX_HTTP_MAIN_CONF|NGX_HTTP_SRV_CONF|NGX_CONF_FLAG,
++      NGX_STREAM_MAIN_CONF|NGX_STREAM_SRV_CONF|NGX_CONF_FLAG,
+       ngx_conf_set_flag_slot,
+-      NGX_HTTP_SRV_CONF_OFFSET,
+-      offsetof(ngx_http_core_srv_conf_t, kernel_network_stack),
++      NGX_STREAM_SRV_CONF_OFFSET,
++      offsetof(ngx_stream_core_srv_conf_t, kernel_network_stack),
+       NULL },
+ 
+ #endif
+#################################################################
+
+However here is the last merged commit and it is present in our tree
+
+################ Commited and Merged #######################################
+
+From 0a6b81772e4a8365bb1374ed5fcbf2d37cb78249 Mon Sep 17 00:00:00 2001
+From: chenwei <chadwill@aliyun.com>
+Date: Wed, 31 Jan 2018 09:02:25 +0800
+Subject: [PATCH] Nginx : Fix Compile error Fix compile error when configure
+ nginx with --with-stream
+
+---
+ app/nginx-1.11.10/src/stream/ngx_stream_core_module.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/app/nginx-1.11.10/src/stream/ngx_stream_core_module.c b/app/nginx-1.11.10/src/stream/ngx_stream_core_module.c
+index 49592de2..734a9d22 100644
+--- a/app/nginx-1.11.10/src/stream/ngx_stream_core_module.c
++++ b/app/nginx-1.11.10/src/stream/ngx_stream_core_module.c
+@@ -59,10 +59,10 @@ static ngx_command_t  ngx_stream_core_commands[] = {
+ #if (NGX_HAVE_FSTACK)
+ 
+     { ngx_string("kernel_network_stack"),
+-      NGX_HTTP_MAIN_CONF|NGX_HTTP_SRV_CONF|NGX_CONF_FLAG,
++      NGX_STREAM_MAIN_CONF|NGX_STREAM_SRV_CONF|NGX_CONF_FLAG,
+       ngx_conf_set_flag_slot,
+-      NGX_HTTP_SRV_CONF_OFFSET,
+-      offsetof(ngx_http_core_srv_conf_t, kernel_network_stack),
++      NGX_STREAM_SRV_CONF_OFFSET,
++      offsetof(ngx_stream_core_srv_conf_t, kernel_network_stack),
+       NULL },
+ 
+ #endif
+
+##########################################################################
+
+
+
+
+
+
+

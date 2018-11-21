@@ -1,0 +1,56 @@
+machine:
+  services:
+    - docker
+  environment:
+    GOPATH: ${HOME}/go
+    SRC_DIR: ${GOPATH}/src/github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}
+    GOOGLE_APPLICATION_CREDENTIALS: ${HOME}/gcloud-service-key.json
+    HELM_INSTALL_DIR: ${HOME}/bin
+    LDFLAGS: -L${HOME}/lib
+    CXXFLAGS: -I${HOME}/include
+    PKG_CONFIG_PATH: ${HOME}/lib/pkgconfig
+    LD_LIBRARY_PATH: ${HOME}/lib
+
+dependencies:
+  pre:
+    # Pull submodules
+    - git submodule init && git submodule update
+    # Move the build target into its proper Go place
+    - mkdir -p ${GOPATH}/src/github.com/${CIRCLE_PROJECT_USERNAME}
+    - mv ${HOME}/${CIRCLE_PROJECT_REPONAME} ${SRC_DIR}
+    # Symlink back to make CircleCI tools happier
+    - ln -s ${SRC_DIR} ${HOME}/${CIRCLE_PROJECT_REPONAME}
+
+    # Note the similarities with lightstep-benchmarks/scripts/docker/Dockerfile.build_cpp
+    # TODO publish a single build_cpp image (w/ prebuilt protobuf / gRPC) and use it here
+    - sudo apt-get update; sudo apt-get install autoconf automake git-core libtool pkg-config wget curl unzip gcc-5 g++-5
+    - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 100
+    - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 100
+
+    # CMake
+    - git clone -b v3.9.1 https://github.com/Kitware/CMake.git && cd CMake && ./bootstrap --prefix=${HOME} && make && make install
+
+    # Protobuf
+    - git clone -b 3.0.x https://github.com/google/protobuf && cd protobuf && ./autogen.sh && ./configure --enable-shared --prefix=${HOME} && make && make install prefix=${HOME}
+
+    # gRPC
+    - git clone -b v1.0.1 https://github.com/grpc/grpc && cd grpc && git submodule update --init && make && make install prefix=${HOME}
+
+    # OpenTracing (TODO: use version tag)
+    - git clone https://github.com/opentracing/opentracing-cpp.git && cd opentracing-cpp && cmake -DCMAKE_INSTALL_PREFIX=${HOME} . && make && make install
+
+  cache_directories:
+    - /opt/google-cloud-sdk
+    - ~/bin
+    - ~/.helm
+
+test:
+  override:
+    - cd ${SRC_DIR} && mkdir build_with_grpc && cd build_with_grpc && cmake -DCMAKE_INSTALL_PREFIX=${HOME} -DWITH_ASAN=ON -DWITH_TSAN=ON .. && make && make test
+    - cd ${SRC_DIR} && mkdir build_no_grpc && cd build_no_grpc && cmake -DCMAKE_INSTALL_PREFIX=${HOME} -DWITH_GRPC=OFF .. && make && make test
+
+experimental:
+  notify:
+    # Reduce slack noise from failed WIP branch builds
+    branches:
+      only: [master]

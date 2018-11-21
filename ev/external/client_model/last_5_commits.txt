@@ -1,0 +1,82 @@
+commit 99fa1f4be8e564e8a6b613da7fa6f46c9edafc6c
+Merge: 6f38060 1d0c6ca
+Author: Brian Brazil <brian.brazil@robustperception.io>
+Date:   Fri Nov 17 10:05:41 2017 +0000
+
+    Merge pull request #19 from RafalKorepta/master
+    
+    Add creation of python directories in Makefile.
+
+commit 1d0c6ca3b839b4f4ce46afcfa07372b79cec2b6e
+Author: Rafal Korepta <r.korepta@f5.com>
+Date:   Thu Nov 16 15:16:40 2017 +0100
+
+    Add creation of python directories in Makefile.
+
+commit 6f3806018612930941127f2a7c6c453ba2c527d2
+Author: beorn7 <beorn@soundcloud.com>
+Date:   Thu Feb 16 19:52:47 2017 +0100
+
+    Remove AUTHORS.md reference from CONTRIBUTING.md
+    
+    Change-Id: I44626f7b90ae36c84d363320ccf31ec5691bc0e2
+
+commit 403224ee3dfcf5b7f80f71f80d392577d0655a4e
+Author: beorn7 <beorn@soundcloud.com>
+Date:   Thu Feb 16 19:00:07 2017 +0100
+
+    Replace AUTHORS.md by an updated MAINTAINERS.md
+    
+    Change-Id: I8706b0172031eb87fa1bd5b99787b6b87ba75d24
+
+commit fa8ad6fec33561be4280a8f0514318c79d7f6cb6
+Merge: bc9454c 086fe7c
+Author: Brian Brazil <brian-brazil@users.noreply.github.com>
+Date:   Thu Feb 12 10:17:44 2015 +0000
+
+    Merge pull request #9 from brian-brazil/histogram
+    
+    Add Histogram metric type
+
+commit 086fe7ca28bde6cec2acd5223423c1475a362858
+Author: Brian Brazil <brian.brazil@boxever.com>
+Date:   Wed Feb 11 16:31:40 2015 +0000
+
+    Add Histogram metric type
+    
+    See https://docs.google.com/document/d/1uSenXRDjDaJLV3qnSD09GqgPdEEDPjER0mVsnGaCYF0/edit#
+
+commit bc9454ca562dc050e060ea61a1c0e562a189850f
+Author: Tobias Schmidt <ts@soundcloud.com>
+Date:   Sat Jan 31 21:44:31 2015 -0500
+
+    Remove old contributing.md
+    
+    Fixes #8
+    
+    Change-Id: I16925d365d3425c3057b0947deec46cb92373582
+
+commit 1533e1bcac8f5932771671329e287151ca71ada6
+Merge: 775af94 aaa140d
+Author: juliusv <julius@soundcloud.com>
+Date:   Thu Jan 22 17:12:21 2015 +0100
+
+    Merge pull request #7 from prometheus/beorn7/license-cleanup
+    
+    License cleanup
+
+commit aaa140d78416d01e0a2a837a0a6c5addfd63e31b
+Author: Bjoern Rabenstein <beorn@soundcloud.com>
+Date:   Thu Jan 22 16:30:43 2015 +0100
+
+    License cleanup
+    
+    Change-Id: Ib4923a1dce8493d5acdb138b372330a3d5f52cdf
+
+commit 775af9440e07a658e13f699448c745367bc12115
+Author: Tobias Schmidt <ts@soundcloud.com>
+Date:   Sun Nov 24 19:23:01 2013 +0700
+
+    Add ruby support
+    
+    Change-Id: I4b5a08db51b4cfaa71abcd2045b60db0cb56c04a

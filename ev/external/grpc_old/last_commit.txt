@@ -1,0 +1,9 @@
+commit 6eae794c9f8f305a51274a79400124093ddc9354
+Merge: f22dae6 4013f0c
+Author: Vijay Pai <vpai@google.com>
+Date:   Fri Mar 2 21:13:28 2018 -0800
+
+    Merge pull request #14459 from vjpai/2phase_thd
+    
+     C++ize gpr_thread as grpc_core::Thread, make it 2-phase init (construct/Start)
+

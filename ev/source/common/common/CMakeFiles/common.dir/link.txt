@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcommon.a  CMakeFiles/common.dir/base64.cc.o CMakeFiles/common.dir/hex.cc.o CMakeFiles/common.dir/logger.cc.o CMakeFiles/common.dir/thread.cc.o CMakeFiles/common.dir/to_lower_table.cc.o CMakeFiles/common.dir/utility.cc.o CMakeFiles/common.dir/version.cc.o CMakeFiles/common.dir/version_linkstamp.cc.o
+/usr/bin/ranlib libcommon.a

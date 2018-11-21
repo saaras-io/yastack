@@ -1,0 +1,35 @@
+commit 92db6960e9cb2bab55b369ae08170c74bc2af291
+Author: Bogdan Drutu <bdrutu@google.com>
+Date:   Sun Mar 4 17:03:01 2018 -0800
+
+    Initial stats proto refactoring. (#52)
+    
+    * Initial stats proto refactoring.
+    
+    * Fix some comments.
+    
+    * Remove max aggregation.
+
+commit 76d8c7202dd4fff397b1667e694b9bd4f06946e5
+Author: Bogdan Drutu <bdrutu@google.com>
+Date:   Sat Mar 3 12:07:15 2018 -0800
+
+    Add Span kind to the Span. (#51)
+
+commit c5ea5b80735e17f04c38a261ea6b0562718d73ae
+Author: Ramon Nogueira <rmn@google.com>
+Date:   Wed Feb 7 16:50:56 2018 -0800
+
+    Add generated Go code. (#50)
+
+commit d0bcc7222d0c6a443325acd60eefdc7f8a8253f6
+Author: Bogdan Drutu <bdrutu@google.com>
+Date:   Thu Dec 14 10:44:50 2017 -0800
+
+    Upgrade to gradle 4.3. (#48)
+
+commit 993c711ba22a5f08c1d4de58a3c07466995ed962
+Author: Bogdan Drutu <bdrutu@google.com>
+Date:   Wed Dec 13 17:08:59 2017 -0800
+
+    Move protos in opencensus/proto directory. (#47)

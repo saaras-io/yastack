@@ -1,0 +1,60 @@
+commit 8d2f7a062208e5112d078523c45a842ea975eb3e
+Merge: a6936be 880ca30
+Author: Ryan Phillips <ryan.phillips@rackspace.com>
+Date:   Fri Mar 14 11:40:59 2014 -0500
+
+    Merge tag 'v2.0.3'
+    
+    RELEASE LuaJIT-2.0.3
+
+commit 880ca300e8fb7b432b9d25ed377db2102e4cb63d
+Author: Mike Pall <mike>
+Date:   Wed Mar 12 13:24:07 2014 +0100
+
+    RELEASE LuaJIT-2.0.3
+
+commit 30c57579ad6e93f9da00da6e14bbb34cb4ecef73
+Author: Mike Pall <mike>
+Date:   Wed Mar 12 12:54:00 2014 +0100
+
+    Update changelog.
+
+commit 80efb077500ca368b26aab0aadcc4e2e877b10ab
+Author: Mike Pall <mike>
+Date:   Thu Mar 6 17:54:48 2014 +0100
+
+    DynASM: Emit version check after .arch directive.
+
+commit 416abff90dae9c66e17efe9d6a01efce63eefba8
+Author: Mike Pall <mike>
+Date:   Thu Mar 6 00:39:37 2014 +0100
+
+    Don't access dangling reference to reallocated IR.
+
+commit e94150877da95140db47a4e58e14cc9000be273c
+Author: Mike Pall <mike>
+Date:   Fri Feb 28 14:09:34 2014 +0100
+
+    Fix frame depth display for bytecode dump in -jdump.
+
+commit ef3cc47f9fb7df9ed2d92c420162cdabed81dc0e
+Author: Mike Pall <mike>
+Date:   Fri Feb 28 14:09:09 2014 +0100
+
+    Fix recording of BC_VARG.
+
+commit 900d0ce2764008c5326340bc66265e79222128b0
+Author: Mike Pall <mike>
+Date:   Thu Feb 27 12:25:13 2014 +0100
+
+    Fix for -jdump docs.
+
+commit 6a47e123a4339e33a7942525a19348cd2068b057
+Author: Mike Pall <mike>
+Date:   Wed Feb 26 15:56:07 2014 +0100
+
+    Add PS4 port.
+    
+    Thanks to Eddie Edwards.
+
+

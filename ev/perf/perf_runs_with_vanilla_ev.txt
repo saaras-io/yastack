@@ -1,0 +1,93 @@
+With direct response
+====================
+
+######################
+Test with 8k responses
+######################
+
+Server:
+-------
+ubuntu@ip-172-31-27-43:~/togit/ev/build/source/exe$ ./exe -l critical --concurrency 0 -c ./direct_response.yaml 
+^C
+ubuntu@ip-172-31-27-43:~/togit/ev/build/source/exe$ ls -l direct_response2.yaml 
+-rw-rw-r-- 1 ubuntu ubuntu 8457 Mar 15 00:08 direct_response2.yaml
+ubuntu@ip-172-31-27-43:~/togit/ev/build/source/exe$ 
+
+ubuntu@ip-172-31-27-43:~/togit/ev/build/source/exe$ cat direct_response.yaml | grep route -A5                                                              
+          route_config:
+            name: local_route
+            virtual_hosts:
+            - name: local_service
+              domains: ["*"]
+              routes:
+              - match: { prefix: "/" }
+                direct_response: { status: 200, body: {filename : direct_response2.yaml}}
+          http_filters:
+          - name: envoy.router
+  clusters:
+  - name: service_google
+    connect_timeout: 0.25s
+    type: LOGICAL_DNS
+    # Comment out the following line to test on v6 networks
+
+Client:
+-------
+ubuntu@ip-172-31-20-127:~$ wrk -c 20 -d 60 -t 20 --latency http://172.31.27.43:10000                                                                        
+Running 1m test @ http://172.31.27.43:10000
+  20 threads and 20 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.49ms    8.15ms 366.22ms   99.63%
+    Req/Sec     0.95k   287.29     2.40k    95.23%
+  Latency Distribution
+     50%    1.05ms
+     75%    1.32ms
+     90%    1.43ms
+     99%    1.61ms
+  1128132 requests in 1.00m, 9.05GB read
+Requests/sec:  18772.49
+Transfer/sec:    154.22MB
+
+
+######################
+Test with 0k responses
+######################
+
+Server:
+-------
+ubuntu@ip-172-31-27-43:~/togit/ev/build/source/exe$ ./exe -l critical --concurrency 0 -c ./direct_response.yaml                                            
+^C
+ubuntu@ip-172-31-27-43:~/togit/ev/build/source/exe$ cat direct_response.yaml | grep route -A5
+          route_config:
+            name: local_route
+            virtual_hosts:
+            - name: local_service
+              domains: ["*"]
+              routes:
+              - match: { prefix: "/" }
+                direct_response: { status: 200, body: {inline_bytes: ""}}
+          http_filters:
+          - name: envoy.router
+  clusters:
+  - name: service_google
+    connect_timeout: 0.25s
+    type: LOGICAL_DNS
+    # Comment out the following line to test on v6 networks
+ubuntu@ip-172-31-27-43:~/togit/ev/build/source/exe$
+
+Client:
+-------
+ubuntu@ip-172-31-20-127:~$ wrk -c 20 -d 60 -t 20 --latency http://172.31.27.43:10000
+Running 1m test @ http://172.31.27.43:10000
+  20 threads and 20 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   671.21us    5.67ms 204.25ms   99.77%
+    Req/Sec     2.29k   101.42     2.72k    88.39%
+  Latency Distribution
+     50%  422.00us
+     75%  467.00us
+     90%  531.00us
+     99%  716.00us
+  2736780 requests in 1.00m, 334.08MB read
+Requests/sec:  45537.60
+Transfer/sec:      5.56MB
+

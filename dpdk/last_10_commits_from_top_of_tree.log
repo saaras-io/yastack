@@ -1,0 +1,115 @@
+commit d98fac4dae3634fedbb6f3d568e71a30ded81dd9
+Author: Zhiyong Yang <zhiyong.yang@intel.com>
+Date:   Thu Feb 1 12:43:00 2018 +0800
+
+    net/tap: fix icc build
+    
+    The following error is reported when compiling 18.02-rc2 using ICC,
+    "transfer of control bypasses initialization of".
+    The patch fixes the issue.
+    
+    Fixes: 1911c5edc6cd ("net/tap: fix eBPF RSS map key handling")
+    
+    Signed-off-by: Zhiyong Yang <zhiyong.yang@intel.com>
+
+commit 78f1468e21ec2deabc8bf849e9b27ee026b1fc5d
+Author: Thomas Monjalon <thomas@monjalon.net>
+Date:   Thu Feb 1 03:09:10 2018 +0100
+
+    version: 18.02-rc2
+    
+    Signed-off-by: Thomas Monjalon <thomas@monjalon.net>
+
+commit 20d469eff3a86e165c6a060aef855b79fe22a95b
+Author: Marko Kovacevic <marko.kovacevic@intel.com>
+Date:   Wed Jan 24 16:47:26 2018 +0000
+
+    doc: add procinfo restriction with vdev
+    
+    Note added to outline that using
+    proc_info for virtual devices is not supported
+    
+    Signed-off-by: Marko Kovacevic <marko.kovacevic@intel.com>
+    Acked-by: Deepak Kumar Jain <deepak.k.jain@intel.com>
+
+commit 6d5b32a3cbc0c3d1c5eb3b53304c60a3c84fcbe6
+Author: Vipin Varghese <vipin.varghese@intel.com>
+Date:   Tue Jan 30 17:47:02 2018 +0530
+
+    doc: add procinfo restriction with shared library
+    
+    added note category to procinfo guide, to intimate users in shared
+    library mode. Procinfo requires same NIC libraries to probe the NIC
+    devices as Primary Application.
+    
+    Signed-off-by: Vipin Varghese <vipin.varghese@intel.com>
+    Acked-by: Marko Kovacevic <marko.kovacevic@intel.com>
+
+commit deedc8d9913e6dfe8d77a69860290b5e058e44ca
+Author: Junjie Chen <junjie.j.chen@intel.com>
+Date:   Wed Nov 29 12:17:13 2017 -0500
+
+    doc: add a restriction to multi-process support
+    
+    This patch add a restriction to multi-process support: secondary
+    processes should only run alongside primary process with same DPDK
+    version, so that secondary processes can use the same hugepage mmap
+    layout as primary process.
+    
+    Signed-off-by: Junjie Chen <junjie.j.chen@intel.com>
+    Acked-by: John McNamara <john.mcnamara@intel.com>
+
+commit e07a3ed786c50e31cbb6e01f9f26cada0c2a4d70
+Author: Bruce Richardson <bruce.richardson@intel.com>
+Date:   Tue Jan 23 14:11:33 2018 +0000
+
+    event/opdl: fix license header and SPDX tags
+    
+    This patch ensures that the OPDL files all contain correct SPDX tags.
+    The following changes were made to achieve this:
+    * replace license text with SPDX tag
+    * correct occurences where SPDX tag was not on first line of file
+    * ensure license years were correct
+    
+    Fixes: 4236ce9bf5bf ("event/opdl: add OPDL ring infrastructure library")
+    Fixes: 3c7f3dcfb099 ("event/opdl: add PMD main body and helper function")
+    Fixes: d548ef513cd7 ("event/opdl: add unit tests")
+    
+    Signed-off-by: Bruce Richardson <bruce.richardson@intel.com>
+    Acked-by: Liang Ma <liang.j.ma@intel.com>
+
+commit b7237870ba2da118026f5ae4d6fe9eaf0e82837d
+Author: Bruce Richardson <bruce.richardson@intel.com>
+Date:   Tue Jan 23 13:33:37 2018 +0000
+
+    doc: replace license text with SPDX tags on SVG images
+    
+    Signed-off-by: Bruce Richardson <bruce.richardson@intel.com>
+
+commit e67a1a5e35992ccdcfb25aedf59e6c140cbb0059
+Author: Bruce Richardson <bruce.richardson@intel.com>
+Date:   Tue Jan 23 14:21:16 2018 +0000
+
+    config: replace Intel license headers with SPDX tags
+    
+    Signed-off-by: Bruce Richardson <bruce.richardson@intel.com>
+
+commit 85c73894b9277d85456e6601366366f152c9a7e4
+Author: Olivier Matz <olivier.matz@6wind.com>
+Date:   Mon Jan 29 14:11:29 2018 +0100
+
+    test: use SPDX tags in 6WIND copyrighted files
+    
+    Signed-off-by: Olivier Matz <olivier.matz@6wind.com>
+    Acked-by: Bruce Richardson <bruce.richardson@intel.com>
+    Acked-by: Thomas Monjalon <thomas@monjalon.net>
+
+commit 7faa7292cd5d690c29031017ba70a74c3d46c675
+Author: Olivier Matz <olivier.matz@6wind.com>
+Date:   Mon Jan 29 14:11:28 2018 +0100
+
+    app/testpmd: use SPDX tags in 6WIND copyrighted files
+    
+    Signed-off-by: Olivier Matz <olivier.matz@6wind.com>
+    Acked-by: Bruce Richardson <bruce.richardson@intel.com>
+    Acked-by: Thomas Monjalon <thomas@monjalon.net>

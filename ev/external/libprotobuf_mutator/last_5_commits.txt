@@ -1,0 +1,1534 @@
+commit 7e08401f5182b70ba170be5455dce6694732e6d0
+Author: Emmett Neyman <eneyman@seas.upenn.edu>
+Date:   Wed May 30 14:08:25 2018 -0700
+
+    Add include statement to fix build
+
+commit c3d2faf04a1070b0b852b0efdef81e1a81ba925e
+Author: Vitaly Buka <vitalybuka@gmail.com>
+Date:   Tue Mar 6 11:15:32 2018 -0800
+
+    Disable libFuzzer len_control.
+    
+    This tests expect large corpus size, which is reduced by this flag.
+
+commit 1c04078ea88646746e55c759a4686691cec1c795
+Author: Vitaly Buka <vitalybuka@gmail.com>
+Date:   Tue Jan 30 09:51:09 2018 -0800
+
+    Update .travis.yml
+
+commit 5f7a537e6161063131cba80088afd6ff3dd639f2
+Author: Vitaly Buka <vitalybuka@gmail.com>
+Date:   Tue Jan 23 13:42:43 2018 -0800
+
+    Update .travis.yml
+
+commit bf2cd38a707f65231a53e36b0f927e6e260803f3
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Mon Jan 15 21:46:31 2018 -0800
+
+    Disable gcc debug because gcc crashes there
+
+commit 6051cf0447cfdd29caab9de7058264d65e364507
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Mon Jan 15 21:22:49 2018 -0800
+
+    gcc 7
+
+commit 70feea5432aa71096fda3bcef6481b87f499e694
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Mon Jan 15 17:38:26 2018 -0800
+
+    nproc
+
+commit d0d09da2b3f447fd6a85c08abd39dad47bad40d2
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Mon Jan 15 17:24:03 2018 -0800
+
+    Fix -Werror=sign-compare
+
+commit 1c562ab6567cb98bf29de03459e36a99971acab6
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Mon Jan 15 14:25:10 2018 -0800
+
+    Update protobuf
+    Disabled leak sanitizer on travis, looks like travis removed SYS_PTRACE.
+
+commit 3fc43a01d721ef1bacfefed170bc22abf1b8b051
+Author: Vitaly Buka <vitalybuka@gmail.com>
+Date:   Thu Oct 26 13:02:34 2017 -0700
+
+    Update with UTF-8 details
+
+commit 53dccbebe7767265b5c43db7809029ab902ca953
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Mon Oct 16 18:27:21 2017 -0700
+
+    Return LIB_PROTO_MUTATOR_FUZZER_LIBRARIES as it's used by OSS-fuzz
+
+commit 99a97c08884de9554f9943f1e23004ccbe832c13
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Mon Oct 16 18:11:29 2017 -0700
+
+    Remove reference to LIB_PROTO_MUTATOR_FUZZER_LIBRARIES and set -fsanitize-coverage=0
+
+commit e2290dce8d72e3b0d1798236c6555e79e9d90d59
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Mon Oct 16 16:45:40 2017 -0700
+
+    Switch to clang 6.0
+
+commit 7218a158759cc2296927e807eb39c944f26b0c1d
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Mon Oct 16 16:36:40 2017 -0700
+
+    Switch to -fsanitize=fuzzer
+    
+    Fixes issue #78
+
+commit e4eae600ef56c295642318dc592fa106a6199a1b
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Thu Sep 28 17:28:12 2017 -0700
+
+    Improve protection against stack overflow
+    
+    Even messages without required fields can be deep enough to trigger stack
+    overflow.
+
+commit a048ee2cbf105991f7f917622c22e890a7e37add
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Wed Sep 13 17:53:41 2017 -0700
+
+    Fix endif() in cmake file
+
+commit c1a194b6100a88e5c88ae2300cfc553bdc6a9e30
+Author: Vitaly Buka <vitalybuka@gmail.com>
+Date:   Wed Sep 13 15:19:30 2017 -0700
+
+    Update CMakeLists.txt
+
+commit 52af4b0f6f55f9d8836acb605e902db49eb8e6b4
+Author: Jonathan Metzman <metzman@chromium.org>
+Date:   Wed Sep 13 13:31:02 2017 -0700
+
+    Fix compile error in Chromium by changing error message in assertion
+    
+    Change assertion so it doesn't cause a compilation error with
+    -Wstring-conversion, add "-Wstring-conversion" to CMakeLists.txt so this
+    will be caught here if it happens again.
+
+commit b3323e24eca853345cff45c4b3ab89e09d17b9f0
+Author: Vitaly Buka <vitalybuka@gmail.com>
+Date:   Fri Aug 25 15:53:32 2017 -0700
+
+    Update option name (#79)
+    
+    * Update CMakeLists.txt
+    
+    * Update .travis.yml
+
+commit 3afcf3477771476a203fcc6ea0d887f0b1c760aa
+Author: morehouse <mascasa@google.com>
+Date:   Fri Aug 25 14:13:26 2017 -0700
+
+    Use ninja check with CPU_COUNT=8.
+
+commit aec5bb4c167a9172efc49d5b208873f459e42d6c
+Author: morehouse <mascasa@google.com>
+Date:   Fri Aug 25 14:12:09 2017 -0700
+
+    Allow CPU_COUNT to be specified as a CMake argument.
+
+commit 0cf14e36cfa3353540dabde77e3897342ce78730
+Author: morehouse <mascasa@google.com>
+Date:   Thu Aug 24 16:04:19 2017 -0700
+
+    Update .travis.yml
+    
+    Manually build examples and call ctest with a reduced number of CPUs to avoid Travis crashes.
+
+commit f308748be402a0d3792d000fb6f9f75b0019b148
+Author: Vitaly Buka <vitalybuka@gmail.com>
+Date:   Thu Aug 24 15:33:11 2017 -0700
+
+    Update .travis.yml
+
+commit 4677924841c4b9a46750e0b235c40f885dda09cd
+Author: Matt Morehouse <mascasa@google.com>
+Date:   Wed Aug 23 16:25:35 2017 -0700
+
+    Use ninja check in Travis build.
+
+commit ad1c84a45d285792c5a9d0489b5433448d2f0add
+Author: Matt Morehouse <mascasa@google.com>
+Date:   Wed Aug 23 11:02:15 2017 -0700
+
+    Only build examples when running tests.
+
+commit 82316df3da5f053e38c44ae1cbc61237130939d3
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Tue Aug 22 16:13:37 2017 -0700
+
+    Increase kMaxInitializeDepth and remove annoying assert
+
+commit 17789d1039f1cd5fb6c72ee715192c8c8d630fd0
+Author: Tomáš Popela <tomas.popela@gmail.com>
+Date:   Tue Aug 15 13:41:59 2017 +0200
+
+    Fix compilation with GCC 7
+    
+    The build with GCC 7 fails with:
+    
+    FAILED: obj/third_party/libprotobuf-mutator/libprotobuf-mutator/mutator.o
+    g++ -MMD -MF obj/third_party/libprotobuf-mutator/libprotobuf-mutator/mutator.o.d -DV8_DEPRECATION_WARNINGS -DUSE_UDEV -DUSE_AURA=1 -DUSE_PANGO=1 -DUSE_CAIRO=1 -DUSE_GLIB=1 -DUSE_NSS_CERTS=1 -DUSE_X11=1 -DFULL_SAFE_BROWSING -DSAFE_BROWSING_CSD -DSAFE_BROWSING_DB_LOCAL -DCHROMIUM_BUILD -DFIELDTRIAL_TESTING_ENABLED -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D_FORTIFY_SOURCE=2 -DNDEBUG -DNVALGRIND -DDYNAMIC_ANNOTATIONS_ENABLED=0 -DGOOGLE_PROTOBUF_NO_RTTI -DGOOGLE_PROTOBUF_NO_STATIC_INITIALIZER -DHAVE_PTHREAD -I../.. -Igen -I../../third_party/libprotobuf-mutator/src -I../../third_party/protobuf/src -fno-strict-aliasing --param=ssp-buffer-size=4 -fstack-protector -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -funwind-tables -fPIC -pipe -pthread -m64 -march=x86-64 -Wall -Wno-unused-local-typedefs -Wno-maybe-uninitialized -Wno-missing-field-initializers -Wno-unused-parameter -O2 -fno-ident -fdata-sections -ffunction-sections -fomit-frame-pointer -g0 -fvisibility=hidden -std=gnu++14 -Wno-narrowing -fno-rtti -fno-exceptions -fvisibility-inlines-hidden -c ../../third_party/libprotobuf-mutator/src/src/mutator.cc -o obj/third_party/libprotobuf-mutator/libprotobuf-mutator/mutator.o
+    ../../third_party/libprotobuf-mutator/src/src/mutator.cc:35:12: error: ‘std::placeholders’ has not been declared
+     using std::placeholders::_1;
+                ^~~~~~~~~~~~
+    ../../third_party/libprotobuf-mutator/src/src/mutator.cc: In member function ‘void protobuf_mutator::FieldMutator::Mutate(int32_t*) const’:
+    ../../third_party/libprotobuf-mutator/src/src/mutator.cc:342:30: error: ‘bind’ is not a member of ‘std’
+         RepeatMutate(value, std::bind(&Mutator::MutateInt32, mutator_, _1));
+                                  ^~~~
+    ../../third_party/libprotobuf-mutator/src/src/mutator.cc:342:30: note: suggested alternative: ‘find’
+         RepeatMutate(value, std::bind(&Mutator::MutateInt32, mutator_, _1));
+                                  ^~~~
+                                  find
+    ... truncated for simplicity.
+    
+    Including functional fixes the build.
+
+commit 428ad7100534c2a5906149dd724129e97cbdac6b
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Tue Aug 15 11:28:25 2017 -0700
+
+    Update expat build rules
+
+commit 0627b3730a7c0fcd3e09cca848f0bbe4ffbcbfae
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Tue Aug 8 21:50:56 2017 -0700
+
+    pkg-config is needed by cmake to find some dependencies
+
+commit df4f45a30a7066ac280770dcb99112ef6b5baf8c
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Tue Aug 8 16:22:46 2017 -0700
+
+    Remove dependence on docbook2x
+
+commit 34287f8fa212b9a3498b4ae7709ef418ac987e1b
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Wed Aug 2 19:37:44 2017 -0700
+
+    Pin googletest version
+
+commit ddd2e48312724d4c73454fcf3aa0fbeb561fb56a
+Author: Matt Morehouse <mascasa@google.com>
+Date:   Wed Aug 2 15:04:27 2017 -0700
+
+    Create LIB_PROTO_MUTATOR_DOWNLOAD_PROTOBUF option.
+    
+    Update .travis.yml accordingly.
+
+commit 12a53ca13d6250fa2ced4654636efd781ec4367f
+Author: Matt Morehouse <mascasa@google.com>
+Date:   Wed Aug 2 14:16:26 2017 -0700
+
+    Use system-installed protobuf by default.
+    
+    Alternatively, setting DOWNLOAD_PROTOBUF=1 in cmake will have a
+    working protobuf version downloaded and built automatically.
+
+commit 2ac9b0f89073743f63a549f2969b7a93056e9f54
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Wed Aug 2 18:36:21 2017 -0700
+
+    Optimize .travis.yml
+
+commit 628337cd7efb7f16e38cd7de4aec2e54cdfaac20
+Author: Vitaly Buka <vitalybuka@gmail.com>
+Date:   Wed Aug 2 17:09:50 2017 -0700
+
+    Update .travis.yml
+
+commit 636a36f18ea28bd99149b83dec70d6242002e3ea
+Author: Vitaly Buka <vitalybuka@gmail.com>
+Date:   Wed Aug 2 16:28:53 2017 -0700
+
+    Fix travis build
+
+commit 7b8047fdb7ce251359438599f65e3f4076d731da
+Author: Vitaly Buka <vitalybuka@gmail.com>
+Date:   Wed Aug 2 16:25:53 2017 -0700
+
+    Debug travis build
+
+commit 08a68e0546923ed7fd87f069f134fafc7c91fc8d
+Author: Vitaly Buka <vitalybuka@gmail.com>
+Date:   Wed Aug 2 16:21:57 2017 -0700
+
+    Try to fix travis build
+
+commit e1a99c00a9206d2b0a5ce4323759829959188706
+Author: Vitaly Buka <vitalybuka@gmail.com>
+Date:   Wed Aug 2 16:13:20 2017 -0700
+
+    Fix sourceline for llvm toolchain
+
+commit 3fcc5462ef6a8fb821e19be906dc96ffb02ea2de
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Fri Jul 14 13:32:53 2017 -0700
+
+    Add workaround for expat entropy check.
+
+commit c0a20387099400a83fb75f5e4e6a7cd2a3e057ac
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Tue Jun 13 11:48:09 2017 -0700
+
+    Reset message if parsing failed.
+
+commit af8136f037cb823de6bc5b54201aea8dd1ff001c
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Fri Jun 9 16:40:12 2017 -0700
+
+    Restrict proto3 strings to valid UTF-8
+    
+    Fixes #43
+
+commit 8e4650fda64616f8c5478c573419bb64456d94d8
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Fri Jun 9 16:38:08 2017 -0700
+
+    Add FieldInstance::EnforceUtf8
+
+commit 418eba677a25206ef8b6679fcf0c8275e7771095
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Fri Jun 9 16:30:49 2017 -0700
+
+    Add function to fix UTF-8 strings.
+
+commit 24d9fd000704070c0eb0747d3a0e594a63bf8e53
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Mon Jun 5 17:42:57 2017 -0700
+
+    Make argument name in cc the same as in h file.
+
+commit 6cb82efff7b099ae315a9d1ffa72a3cf6e5e772b
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Mon Jun 5 16:41:34 2017 -0700
+
+    Switch xml fuzzers to DEFINE_PROTO_FUZZER macro and delete unused code.
+
+commit c5f8c958eb45f325bd1ba1b838dc4f8f11ffe8fa
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Mon Jun 5 16:09:50 2017 -0700
+
+    Cleanup DEFINE_PROTO_FUZZER macro and implementation.
+
+commit f91517fdba7a2e914427528ef06dac5324c9be12
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Mon Jun 5 15:25:47 2017 -0700
+
+    Add macros for simple fuzzer implementation.
+
+commit a7599a1046fa423e55feba01aa1ec7699532b378
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Mon Jun 5 15:08:28 2017 -0700
+
+    Fix lint warnings
+
+commit 4a96a95e1646e170a1ec0f4bab2bdd5e61677c64
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Mon Jun 5 13:58:02 2017 -0700
+
+    Impact of this optimization was small but it makes example less clear.
+
+commit 8a3c159877fb13b4239c22d0ced01f7f459bbebb
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Fri May 12 22:20:40 2017 -0700
+
+    Move out xml code from libprotobuf-mutator sources into examples.
+
+commit d09fb10060b98523d45e754ca8a812a401202ed1
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Fri May 12 22:20:40 2017 -0700
+
+    Check CMAKE_USE_PTHREADS_INIT for pthread presence.
+
+commit d8ad965089cb478f732ce13dfc8b7ebbc59024bb
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Fri May 12 22:00:56 2017 -0700
+
+    Link protobuf with pthread.
+    Building with --stdlib=libc++ may need this pthread.
+
+commit 84aa25e9afba6e0bbb33f87ecea6afc66976299f
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Fri May 12 21:34:01 2017 -0700
+
+    Remove missing option LIB_PROTO_MUTATOR_WITH_COVERAGE_FLAGS.
+
+commit 19669025bb6daeef7b3459b1ec2df7789db1e6e5
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Fri May 12 21:00:19 2017 -0700
+
+    Disable ASAN by default, as it was unusual default behavior.
+    Remove LIB_PROTO_MUTATOR_WITH_COVERAGE_FLAGS. It was added for OSS-Fuzz but turn
+    out to be unnecessary.
+
+commit 606ea0aeaa41d87201f168204fa9240d1b5c5d03
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Thu May 11 22:30:52 2017 -0700
+
+    Support -fsanitize-coverage flag passed with environment.
+
+commit f3383a9adb75267730e950bacebfdb5bcc84e2c1
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Sun Mar 19 17:04:18 2017 -0700
+
+    Update assert
+    
+    None is possible if message declared without fields.
+
+commit b2c4fb59135711122b800376d8dc46af2fc9d060
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Thu Mar 16 11:50:40 2017 -0700
+
+    Mutate message when we create new one.
+
+commit 242a20ff50b898a55697f43756711470696d9cef
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Thu Mar 16 14:35:57 2017 -0700
+
+    Don't check for memory leaks in fuzzer tests.
+
+commit 0e9439f6a0ae41b821218f6ffdd76cdf623b0870
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Wed Mar 15 17:51:57 2017 -0700
+
+    Move fallback to default value into CreateField().
+    Also reduce probability of defaults.
+
+commit 329fa46c577106faa24fd978ce737107879d9094
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Wed Mar 15 16:52:17 2017 -0700
+
+    Remove size control heuristic
+    There is no evidence that it was better than just discarding mutation on oversize.
+
+commit ee1c76abde9ecaa3b786f7b4dd1afcb6d9e4f40e
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Wed Mar 15 10:48:53 2017 -0700
+
+    Fix mutator crash if enum has only one value.
+
+commit 4f1ac7d72a5102259188aff4961dad954d7efbcd
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Mon Mar 13 17:24:52 2017 -0700
+
+    Add xmlSaveToBuffer to libxml fuzzer.
+
+commit 490b23a8e8341e642657345ce06571baf388571a
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Sun Mar 12 23:47:58 2017 -0700
+
+    Add size increase parameter for CreateField.
+
+commit 311fe5f6e9648bda9eb98825b3c2d70baa168f53
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Sun Mar 12 21:31:56 2017 -0700
+
+    Remove loop on oversize. Just return 0 and handle another input.
+
+commit 664d33ce490329880adeabf9348c4c6963bf8f38
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Thu Mar 9 11:05:59 2017 -0800
+
+    Remove unused using declaration.
+
+commit cbadfd3345c57d0b4f6533d0a661a6f174d99663
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Thu Mar 9 10:33:47 2017 -0800
+
+    Remove unused using declaration.
+
+commit 32f2faefda94f02d27a0869c540dba7acd6abe9e
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Wed Mar 8 17:10:05 2017 -0800
+
+    Remove unused using declaration.
+
+commit 0fa21bd09061e6c66c85876fe540cddb129c9b82
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Wed Mar 8 17:02:45 2017 -0800
+
+    Don't cast negative floats to uint
+
+commit 0537d843b9162edaf99101aa59b5a78fcbea3770
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Wed Mar 8 16:51:46 2017 -0800
+
+    Return type is specific to version of protobuf library, so return by value.
+
+commit 4b3defd2eff37b044c5ed5dc5d349f7b78728325
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Wed Mar 8 16:37:38 2017 -0800
+
+    Remove port/protobuf_text_format.h as we can't avoid using full protobuf library.
+
+commit 2d609dfa69f670f6a1daf80eaa2d538f96120b2d
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Mon Mar 6 23:29:47 2017 -0800
+
+    libFuzzer does not allow to use LLVMFuzzerMutate from CustomCrossover so
+    we need temporarily undo 142e08bf2a34d57d72e4619adeea4d7bab81a7d0
+
+commit 50500056da3885862001f7b190e735d3fa7729c1
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Mon Mar 6 14:22:27 2017 -0800
+
+    Return prefixes into filenames to avoid issues with Chromium builds.
+
+commit f62fe473bc890998ae8e2d16fdec7ce1292765c7
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Wed Mar 1 23:05:15 2017 -0800
+
+    Setup mutator with pointer to RandomEngine instead of seed.
+
+commit be54a445fdac155ef547b268b9c3854fe4b24c02
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Wed Mar 1 16:39:33 2017 -0800
+
+    Extract text_format.h include into separate header.
+
+commit 829ad0045b8ec3dc617c9bf50a7ae6952b59f91a
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Wed Mar 1 16:26:00 2017 -0800
+
+    Remove functions from port/protobuf.h
+
+commit e79e01842cbbd54e9874529d00c3bd7c1d4f5398
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Wed Mar 1 16:02:14 2017 -0800
+
+    Rename protobuf_mutator::ProtobufMutator into protobuf_mutator::Mutator
+    Rename protobuf_mutator::libfuzzer::LibFuzzerProtobufMutator into protobuf_mutator::libfuzzer::Mutator
+    Rename protobuf_mutator::TestProtobufMutator into protobuf_mutator::TestMutator
+
+commit f90698f8ea035a35197a334999f48fb269517da9
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Wed Mar 1 15:46:58 2017 -0800
+
+    Remove prefixes from some files. It's already in the path.
+
+commit aa5851cfb91f06de9b41ef542e23f45ce1773f83
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Wed Mar 1 15:36:16 2017 -0800
+
+    Move libfuzzer stuff into src/libfuzzer
+
+commit d4a2076f147b02202a060a956fa6156724ac2f99
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Wed Mar 1 14:23:32 2017 -0800
+
+    Split binary and text serialization.
+
+commit 142e08bf2a34d57d72e4619adeea4d7bab81a7d0
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Sun Mar 5 16:26:15 2017 -0800
+
+    Avoid unchanged messages after CrossOver.
+
+commit 677890f0d0b4351acee09c2552c768df313e4a15
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Sat Mar 4 21:41:39 2017 -0800
+
+    Update GIT_TAG of protobuf library.
+
+commit 5f7dfbd66372248d425f51b8d70715b66f9ebdbd
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Sat Mar 4 21:38:13 2017 -0800
+
+    Re-format
+
+commit 28ca0ee229cd1fd9fb85435656c86481a654c751
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Sat Mar 4 21:35:42 2017 -0800
+
+    Proto3 support with tests
+
+commit bbf914dfa8c706efdf2309ab0332107959105745
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Sat Mar 4 19:32:21 2017 -0800
+
+    Simplify tests by removing and renaming some parameters.
+
+commit fb19337359a693cdd22b506fa7a9edeb8a720f56
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Sat Mar 4 19:25:29 2017 -0800
+
+    Use message prototype as test parameter.
+
+commit 2256ad7a500b222f0e6c8108ba074947cdc8085b
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Sat Mar 4 17:38:15 2017 -0800
+
+    Reduce space of filed mutation during Mutate(from, to) tests.
+    Here we test if mutator changes particular fields. Field mutations itself will
+    be replaced by particular fuzzer anyway.
+
+commit f90f65a8402e5fb2cad3aad3a5ed1136ae114aea
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Sat Mar 4 01:56:08 2017 -0800
+
+    Remove default from switch statement and add abort() call to fix warning on gcc.
+
+commit d3a76b898a318ef5e0c7a61459918ae607d306b4
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Sat Mar 4 01:27:22 2017 -0800
+
+    Add test to check that mutator is actually change messages.
+
+commit 66d06c7b14b717efcd8917c2363dddef1df73a85
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Sat Mar 4 01:22:34 2017 -0800
+
+    Instead of deleting field just restart mutator if source was not selected.
+    Deleting field without proper checks may leave message unchanged.
+
+commit 4344a469ac7b607b3fe2b5338cae5ec277cf7bf2
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Sat Mar 4 01:16:05 2017 -0800
+
+    Prefer smaller values creating non-default fields.
+
+commit 4782c1411c5eba9b42c48ceb1ee846a98e4fe530
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Sat Mar 4 00:12:32 2017 -0800
+
+    Check if field values are different before copying them.
+
+commit d4ab1e714458057868b62c7a6603db4cd2802ac5
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Fri Mar 3 23:51:19 2017 -0800
+
+    Replace filed instance transformations with functiors for better readability.
+
+commit fc2afdae70595293d6985f72c5ab93e7b58fbbbc
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Fri Mar 3 19:55:24 2017 -0800
+
+    Remove unnecessary MutateBool override from test.
+
+commit 2f660a5fe9e5d8740367c10eb0e08d4b8e5beca7
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Fri Mar 3 19:46:14 2017 -0800
+
+    Do not add the same OneOf field.
+
+commit c020de1c1cf35fc1621df584177f532c07f8eaef
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Fri Mar 3 19:36:23 2017 -0800
+
+    Make MutateString overrides always return new values.
+
+commit 796b1121f90edf33fdaffab0c11895788594ae27
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Fri Mar 3 14:42:02 2017 -0800
+
+    Make sure FieldMutator actually changes values.
+
+commit 89098ff27a0ef9e81b8ced4a02eb8b960aead368
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Fri Mar 3 14:48:04 2017 -0800
+
+    Switch some tests to TYPED_TEST for future proto3 support
+
+commit b592ff0f8fb06ba720a7bdb82d1f76f80e64de0a
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Fri Mar 3 14:35:52 2017 -0800
+
+    Reuse GetRandomIndex in one more place.
+
+commit 4e4243c779c6a68b4daff5333e012bca1e057c82
+Author: Vitaly Buka <vitalybuka@google.com>
+Date:   Fri Mar 3 14:32:47 2017 -0800
+
+    Add ConstFieldInstance::name(). Helpful when debugging.
+
+commit 9f19110ef75ff7e8c50428247a262a131f312c3c
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Wed Mar 1 14:25:50 2017 -0800
+
+    Restore more interesting version of the test.
+
+commit 770252aa1864520bf7d3aa40451da88864e3ca06
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Tue Feb 28 16:44:14 2017 -0800
+
+    Suppress protobuf logs.
+
+commit beb90800f9a1669e20a30d4bca23e0dcdec6fb07
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Tue Feb 28 15:28:10 2017 -0800
+
+    Add GetRandomBool function.
+
+commit e61cae4ac6ce416acc367b8f6adee2e047e47110
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Mon Feb 27 18:04:31 2017 -0800
+
+    Update README.
+
+commit aff1155294e9b75d309857937c9e7487255073a1
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Mon Feb 27 18:03:42 2017 -0800
+
+    Reformat.
+
+commit e4c77f50760c3a6954829b42bbc93efea60760ee
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Mon Feb 27 17:57:51 2017 -0800
+
+    Extract FuzzerTest to reuse test code.
+
+commit 73c1c6ad9d457fb5fa862f00e90a6b9be062533d
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Mon Feb 27 14:21:33 2017 -0800
+
+    Support binary serialization of protos.
+
+commit c202a23ed2e1a50aac323d7d488991458e455e96
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Mon Feb 27 16:51:26 2017 -0800
+
+    Fix protoc dependency.
+
+commit f86815cbb3b74d4de6dc3377ebc1ba61cc141239
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Mon Feb 27 14:19:19 2017 -0800
+
+    Hide namespace alias protobuf into protobuf_mutator namespace.
+
+commit 2ac271b9a65012db13ba4728eea1a5bce757aba2
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Mon Feb 27 13:37:16 2017 -0800
+
+    Refactor MutateTextMessage and CrossOverTextMessages for future binary support.
+
+commit c7b11a69c939b30431bf5500a1586e6c03c2802a
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Mon Feb 27 12:47:55 2017 -0800
+
+    Remove unnecessary argument from MutateTextMessage and CrossOverTextMessages.
+
+commit de300da4c900175f2926d129e6316ab8c1b0f525
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Sun Feb 26 22:09:30 2017 -0800
+
+    Move flattening into CrossOver.
+
+commit 53a6e8ccf21ffa9c30c7a24024a86365707a02e7
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Sun Feb 26 22:39:58 2017 -0800
+
+    Integrate CrossOver into XML examples.
+
+commit 1c3885e04d0f3eb07afa239798a03ee6e1e171bf
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Sun Feb 26 22:38:34 2017 -0800
+
+    Integrate CrossOver into libFuzzer example.
+
+commit adfc27cc38ce6be48308064f94000f0f714febe0
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Sun Feb 26 22:36:36 2017 -0800
+
+    Implement ProtobufMutator::CrossOver.
+
+commit 8871286ada4b6b670781514491e3e5a409a2d1dd
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Sun Feb 26 22:21:30 2017 -0800
+
+    Extract read-only part of FieldInstance.
+
+commit d16966b40f38c2f6a075f8d160a07206cb1774db
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Sun Feb 26 22:14:55 2017 -0800
+
+    Fix typos.
+
+commit cbac20f96ba316b84d2aa29b3ce51b09be72bce4
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Sun Feb 26 22:11:57 2017 -0800
+
+    Remove unnecessary assert.
+
+commit 35df2e49a8f336acaed235b739e1bd34e0444528
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Sat Feb 25 01:17:25 2017 -0800
+
+    Move port dir to the top
+
+commit 5d01320b6805db81a10278981060e35b6150c5e5
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Feb 24 16:50:11 2017 -0800
+
+    Create new non default fields as well as non defaults.
+
+commit 68e49ad51cfa4e84c5263bf04d51ac7fc3b52392
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Feb 24 14:24:31 2017 -0800
+
+    Generate empty string in LibFuzzerProtobufMutator
+    LLVMFuzzerMutate does not produce empty strings.
+
+commit c01ab1c68f57f2d78b0d56159a5347b23263b5d3
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Feb 24 13:56:07 2017 -0800
+
+    Fix path to gtest include.
+
+commit 9f9493360dc07706e6d776bba16f1a0e4127462a
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Feb 24 13:49:39 2017 -0800
+
+    Wrap protobuf::TextFormat::PrintToString to allow to use version of protobuf
+    library with different string types.
+
+commit 6c6dbbe12e09fe65924ee57be831d69d4f02a95a
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Wed Feb 22 13:58:24 2017 -0800
+
+    Add src/port for integration flexibility.
+
+commit 5b1a00395be9c777e8708ae79ec2d6254c4d0dca
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Feb 17 00:06:06 2017 -0800
+
+    Split root CmakeLists.txt into smaller nested ones.
+
+commit 0838e68dcbf02c42708369b419ae23d79ffec3aa
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Thu Feb 16 16:41:41 2017 -0800
+
+    Pin protobuf to particular revision to avoid breakages in continuous build.
+
+commit e2ba0d2a35d41525631b0217f75f66a6cb3ce1c9
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Wed Feb 8 16:17:49 2017 -0800
+
+    Disable libxml2 options which can cause fuzzing hangs.
+
+commit a2211fce9e470303dc7749ab65d16cae7f2cc34c
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Wed Feb 8 00:18:36 2017 -0800
+
+    Rename tests and reduce expected corpus size in ExpatExampleTest.Fuzz
+
+commit 11c3314c55f5fbe280e703bdab544176309ec1e8
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Mon Feb 6 18:39:21 2017 -0800
+
+    Add expat fuzzer
+
+commit 944e45ed0edede1ce0ad79d2c2e73e34bf90e605
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Mon Feb 6 18:39:21 2017 -0800
+
+    Add expat fuzzer
+
+commit 40f881f0d1ee043b85931908e9b8c85891aa4b8a
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Sat Feb 4 11:09:15 2017 -0800
+
+    Disabled coverage for protobuf library
+
+commit cc3942852e5af0005eab4cbcc76d0bccca5afc17
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Sat Feb 4 00:05:43 2017 -0800
+
+    Add more build options to simplify intergration with OSS-Fuzz
+
+commit eb2cce20b30360668afd75446b5451d383fbbf28
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Feb 3 19:45:47 2017 -0800
+
+    Add LIB_PROTO_MUTATOR_XML2_NO_FLATTENING to disable flattening
+
+commit 0b6d2fea59845ecd4f6e28c64ee26e1781112160
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Feb 3 18:27:46 2017 -0800
+
+    Mark libs as not required.
+    Not all build targets needs them.
+
+commit d92682b466a9d7a9d5a2edadff25abbaaa887ec9
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Feb 3 17:28:47 2017 -0800
+
+    Move xml->proto conversion into xml_converter tool
+
+commit 4f74c342e7ce5c196db5f640d62e7ac61097b5c9
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Tue Jan 31 14:28:51 2017 -0800
+
+    Move xml code which does not depend on libxml2 into src/xml dir.
+
+commit 7d9513943458dcb27d1e66c35f798fa5778d134c
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Jan 20 15:22:54 2017 -0800
+
+    Add libxml fuzzer
+
+commit 7ea978beda939eb0eb3c26f16dd94ab67a8817ea
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Tue Jan 31 11:05:15 2017 -0800
+
+    Remove -fsanitize=leak, address sanitizer detects leaks
+
+commit 4f9e49a0e7b714ea420b6ddd3b034332a7590213
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Mon Jan 30 22:12:56 2017 -0800
+
+    Link LZMA and uses installed zlib.
+
+commit 66925561b3ec4d00b4a84430b6efed3cc3fe9858
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Mon Jan 30 18:03:34 2017 -0800
+
+    Make LLVMFuzzerMutate declaration weak
+
+commit 7e1f0d47edc6e666b6828ca43e7772bcaf57f3e5
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Mon Jan 30 17:53:31 2017 -0800
+
+    Fix text flakiness
+
+commit 27f7d25da05e6bf361818290eea2d2faee723598
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Mon Jan 30 17:46:19 2017 -0800
+
+    Add SaveMessageAsText(const Message&, uint8_t*, size_t)
+
+commit 24434419e14f1c1ad73b6e3f9e9057ab0528444b
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Mon Jan 30 17:42:05 2017 -0800
+
+    clang-format
+
+commit a3f0ab8c11bdb27d3ddf065e4f58494822eb7b74
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Mon Jan 30 17:32:06 2017 -0800
+
+    For simplicity don't pass flags to dependencies.
+
+commit 8cd4655ad9ca44f3211530220ec1cececb670857
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Mon Jan 30 17:29:21 2017 -0800
+
+    Remove sanitize=undefined as it's slowdown execution significantly.
+
+commit 99677daa2da4717fe461fd5fab464937277f31c7
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Jan 27 23:31:31 2017 -0800
+
+    Switch to GCC 4.8
+
+commit f5072d2d988d8dc7c07b59dd12c9106218fe40bb
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Jan 27 20:39:21 2017 -0800
+
+    Cleanup make files
+
+commit 2a8374689e1782b1eaf94d0751ac60fe7c0553e5
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Jan 27 20:35:39 2017 -0800
+
+    Simplify fuzzer as with existing settings it was tool slow.
+
+commit 66e22345391598a25f4e20935efc65cd40f3ce1e
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Jan 27 20:34:08 2017 -0800
+
+    Add pthread as this dependency was introduced by libFuzzer
+
+commit 77f9414a0742e9d6cf77e87a2368765ca81c0def
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Jan 27 19:03:10 2017 -0800
+
+    Cleanup setup of fuzzing flags.
+
+commit 0aecd905819f15251ad7547d508a700c6790e489
+Author: Kostya Serebryany <konstantin.s.serebryany@gmail.com>
+Date:   Mon Jan 23 15:17:18 2017 -0800
+
+    add a string field to libfuzzer_example.proto and test it in libfuzzer_example.cc
+
+commit 1ab1c027d383e3a8e725f2c96062e78740425367
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Jan 20 18:45:33 2017 -0800
+
+    Move -fsanitize-coverage=trace-pc-guard back to the libfuzzer example
+    Only this code needs this flag. Using for the rest slowdowns fuzzing
+    significantly.
+
+commit eb6c699f886a55c1722cdd24af91433856d12287
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Jan 20 17:44:55 2017 -0800
+
+    Use build script shipped with libFuzzer.
+
+commit edf5d3ea291ed23b172b619366693be9f2ac1545
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Jan 20 17:44:24 2017 -0800
+
+    Increase number of iterations in libFuzzer test
+
+commit 8da52815c1ea19435da656f68c0472f15a0ee885
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Jan 20 15:14:44 2017 -0800
+
+    Move examples/libfuzzer* to examples/libfuzzer/libfuzzer_example*
+
+commit ede28e26d5e2a0008a07a8340953f2a41ec1e5dc
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Thu Jan 19 21:15:57 2017 -0800
+
+    Disable warning in Libxml2 code
+
+commit 8a038c6ef6b8f221252d962fd8743683941505d8
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Tue Jan 17 13:22:58 2017 -0800
+
+    Forward compilation flags to ExternalProject_Add
+
+commit 5988d1580667b26b6b85779299991bc5a1d85d1a
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Jan 13 20:27:07 2017 -0800
+
+    Never update external projects to speedup incremental build.
+
+commit b2a2e8e79a07ab09257dc0c7919fbdbc9af579b4
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Jan 13 19:52:54 2017 -0800
+
+    Build files for libxml2.
+
+commit 32165bfcb65680cb532ac71a7f9abef849d4b041
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Tue Jan 17 13:37:22 2017 -0800
+
+    Use dist:trusty
+    Switch to clang 5.0 and 4.0 is removed from apt repo.
+
+commit 288eb3af4c24a5e59195fcd71eafa2a3247246cc
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Tue Jan 17 13:35:46 2017 -0800
+
+    protobuf-compiler is not needed
+
+commit c90f481e26080960911db982a8092a8edb062d2f
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Tue Jan 17 13:28:30 2017 -0800
+
+    Use just NOLINT
+    Not older version of cpplint does not support NOLINT(build/include_subdir)
+
+commit b37b31a2b608d45f3c7c73aa6916a27d2b7739bb
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Jan 13 00:48:31 2017 -0800
+
+    Move libfuzzer_example into examples dir.
+
+commit 8c64f9b86cd95083feec1f2ad0797c52a2c0b738
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Thu Jan 12 11:14:02 2017 -0800
+
+    Extract most of LLVMFuzzerCustomMutator and LLVMFuzzerTestOneInput into
+    fuzzing_helpers.h
+
+commit 9dd2f8e8062ed94d93b6c68a79183cb66cc8180a
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Jan 13 00:48:31 2017 -0800
+
+    Remove suppression of build/include_subdir cpplint check.
+
+commit 886d543d64b31898f543924cd08f1f64c06f37f6
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Thu Jan 12 23:58:29 2017 -0800
+
+    Add cpplint into continuous build.
+
+commit f047a00364d2b5b4fec5b895186265c604744a4a
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Thu Jan 12 23:57:00 2017 -0800
+
+    Fix cpplint warnings
+
+commit 4be22c425ea6fcad1764673ad75f3430d418af94
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Thu Jan 12 22:55:48 2017 -0800
+
+    reformat
+
+commit ae83ef09b3343ff51844ba46cdfaf80a9a976801
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Thu Jan 12 13:15:40 2017 -0800
+
+    Add Travis Ci config
+
+commit 0e1e46bf3e333095326f201b0b8c1119be22f0da
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Thu Jan 12 21:54:25 2017 -0800
+
+    Fixed sign-compare warning.
+
+commit 6a21eac03211c82094b697120fa5b9f3fed364c7
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Thu Jan 12 14:40:48 2017 -0800
+
+    Move /cmake/CMakeLists.txt to /CMakeLists.txt
+
+commit 0fed9aa48e29b13c1d8e4d8099cc47269491bc09
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Wed Jan 11 16:55:12 2017 -0800
+
+    Move sources into src/ directory.
+
+commit 7f897aa077f456efbca1d0aba1a03c06df86fbce
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Wed Jan 11 16:14:02 2017 -0800
+
+    Add build into ignore list.
+
+commit 27c3959a43c48b3d2396029ce0d9aa11bdaae6ec
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Wed Jan 11 16:13:23 2017 -0800
+
+    Add clang into README file.
+
+commit 4d5433971c2c5581b83f746908b70e695d2ce6cf
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Wed Jan 11 15:46:48 2017 -0800
+
+    Add empty .gitignore
+
+commit 7c99c8bdf668e2c850bfb287bb3f5bdf4d3dafad
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Wed Jan 11 13:56:09 2017 -0800
+
+    Check if compiler supports libFuzzer and sanitizer specific flags
+    
+    This allows to build most parts with both gcc and clang.
+    
+    Change-Id: I6fbdedfcb492f48b46f9f35018c9c3f9fd48820d
+    Reviewed-on: https://team-review.git.corp.google.com/58604
+    Reviewed-by: Vitaly Buka <vitalybuka@google.com>
+
+commit b4cc41b15c3399c8df82d7c07cab76060859315c
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Mon Jan 9 16:35:26 2017 -0800
+
+    Add libfuzzer_example_test
+    
+    Change-Id: I3240ad0042a7010492e451bcb5411427fbc237d6
+    Reviewed-on: https://team-review.git.corp.google.com/58378
+    Reviewed-by: Vitaly Buka <vitalybuka@google.com>
+
+commit b93a14687c910149556a223456fa566f5f84d87e
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Jan 6 17:52:58 2017 -0800
+
+    Add libFuzzer
+    
+    Change-Id: I20a50cb7b84702b299a9a1cb6592d1899089cafa
+    Reviewed-on: https://team-review.git.corp.google.com/58372
+    Reviewed-by: Vitaly Buka <vitalybuka@google.com>
+
+commit aa7be1e6ec2ac9bc90ce32e0b8f657205d75b551
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Jan 6 16:29:28 2017 -0800
+
+    Add option to enabled Asan.
+    Fixed last shard index.
+    
+    Change-Id: I136a8e8d417ddea7e4df5a923958d83575c77979
+    Reviewed-on: https://team-review.git.corp.google.com/58371
+    Reviewed-by: Mike Aizatsky <aizatsky@google.com>
+
+commit 43f748f91a6a08f4005836db2330155d4349d6d4
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Thu Jan 5 20:59:32 2017 -0800
+
+    Simplify proto comparison in test.
+    
+    Change-Id: Ia8d559f375be5bdf7cdb0d979140b9fdbd513c85
+    Reviewed-on: https://team-review.git.corp.google.com/58370
+    Reviewed-by: Mike Aizatsky <aizatsky@google.com>
+
+commit c2f0c697a0d74c1a3ed91382383f58138431852a
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Thu Jan 5 18:36:12 2017 -0800
+
+    Concurrent execution of unittests.
+    
+    Change-Id: Ic0d8ccaba52605db475f8291dc7180178f5bcbfe
+    Reviewed-on: https://team-review.git.corp.google.com/58369
+    Reviewed-by: Mike Aizatsky <aizatsky@google.com>
+
+commit 265b149a759009445bdb4be1f6c9a0750920b8e0
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Wed Jan 4 13:33:51 2017 -0800
+
+    Fixed typo in README.md
+    
+    Change-Id: I68cd896ef34adee6822626d16b0d858b6fc5373d
+    Reviewed-on: https://team-review.git.corp.google.com/58028
+    Reviewed-by: Vitaly Buka <vitalybuka@google.com>
+
+commit 4d5d37825d73ad7581d93cef947846f61dec86ed
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Dec 16 14:23:30 2016 -0800
+
+    Remove trailing spaces
+    
+    Change-Id: I10af34b8203aaed9a4aaa0bdefd9454152eff784
+    Reviewed-on: https://team-review.git.corp.google.com/57531
+    Reviewed-by: Vitaly Buka <vitalybuka@google.com>
+
+commit 4a6d6fc73c700d3193c8b6d0d1bb9fbc617cb852
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Dec 16 14:21:37 2016 -0800
+
+    Remove deleted argument from documentation
+    
+    Change-Id: I8cf211a0ddb3e6a8de1ce33bd0b129df52a8ead1
+    Reviewed-on: https://team-review.git.corp.google.com/57530
+    Reviewed-by: Vitaly Buka <vitalybuka@google.com>
+
+commit 72019dc2d923a57bd3991e5053a31f296b3eac30
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Wed Dec 14 19:17:24 2016 -0800
+
+    Simplify size control
+    
+    Change-Id: I42f55a45bf7bf514ebbd263b2a2909751c19891b
+    Reviewed-on: https://team-review.git.corp.google.com/57398
+    Reviewed-by: Vitaly Buka <vitalybuka@google.com>
+
+commit ba12972cb72d3e0bf5fea8d963a25f64e0d3ac0c
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Wed Dec 14 17:29:15 2016 -0800
+
+    Hide keep_initialized argument and keep messages always initialized
+    
+    Change-Id: I504bff28dc346f3ed55a3302f9604bdff125f629
+    Reviewed-on: https://team-review.git.corp.google.com/57397
+    Reviewed-by: Vitaly Buka <vitalybuka@google.com>
+
+commit 482c172dcf83d91c8dea56af631b9bf30384f00d
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Wed Dec 14 14:48:32 2016 -0800
+
+    Trivial tests as usage example
+    
+    Test checks that we can produce all variation for the simple message
+    
+    Change-Id: If9458f9d0404c6dd47e345c3b121fb44f16355e3
+    Reviewed-on: https://team-review.git.corp.google.com/57392
+    Reviewed-by: Vitaly Buka <vitalybuka@google.com>
+
+commit a3e59c75feb3b1fbed97c7926016e19875f98e67
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Tue Dec 6 16:53:56 2016 -0800
+
+    Implement mutation which copies fields of the same type.
+    
+    Change-Id: Ie6c74687ceb648b6000f31eeba2d0d80ab1fab12
+    Reviewed-on: https://team-review.git.corp.google.com/56756
+    Reviewed-by: Vitaly Buka <vitalybuka@google.com>
+
+commit 91ad7b0566419bb14cc6730e1c85e39a99730dad
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Mon Dec 12 15:41:41 2016 -0800
+
+    Move more logic into FieldInstance class and extract it to separate file
+    
+    Change-Id: Id98e9cb453bc6da4eddf619c56ea2de6279417cd
+    Reviewed-on: https://team-review.git.corp.google.com/57391
+    Reviewed-by: Vitaly Buka <vitalybuka@google.com>
+
+commit e8c86435ae3ee1d1753e2036d74025230b51918e
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Dec 9 19:49:43 2016 -0800
+
+    Added TODOs for kcc's offline comments.
+    
+    Change-Id: I546c9a67047d9dc952a7ec076ccd50c3496056b4
+    Reviewed-on: https://team-review.git.corp.google.com/57055
+    Reviewed-by: Vitaly Buka <vitalybuka@google.com>
+
+commit bec522238f264ff97da25cf5b323429b54c68bc8
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Dec 9 14:29:32 2016 -0800
+
+    Pass message, field and index as a FieldInstance structure.
+    Calculate index for repeated fields during field sampling.
+    
+    Change-Id: Ic7dd8260544b80c45fba129d3d164e0f5fbc8a53
+    Reviewed-on: https://team-review.git.corp.google.com/57054
+    Reviewed-by: Vitaly Buka <vitalybuka@google.com>
+
+commit 8aa751040059c586051b4d327228e1ce27d6b791
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Dec 9 20:01:15 2016 -0800
+
+    Test to estimate performance
+    
+    Change-Id: I440a4be3d588b6b2d0a0d4d9f43efb1e12fd1f5e
+    Reviewed-on: https://team-review.git.corp.google.com/57053
+    Reviewed-by: Vitaly Buka <vitalybuka@google.com>
+
+commit 20e7b06bb0e561b7a7637331599f291b978327ec
+Author: Kostya Serebryany <konstantin.s.serebryany@gmail.com>
+Date:   Thu Dec 15 11:45:50 2016 -0800
+
+    docs
+
+commit 2d4a8d8ea76e1f5038a1a01b255daafc7ec65123
+Author: Kostya Serebryany <konstantin.s.serebryany@gmail.com>
+Date:   Thu Dec 15 11:43:56 2016 -0800
+
+    docs
+
+commit dbd3185ae0140c135446b13ab48ff576e2931afa
+Author: Kostya Serebryany <konstantin.s.serebryany@gmail.com>
+Date:   Thu Dec 15 11:41:38 2016 -0800
+
+    docs
+
+commit d182264e21b67670494817b0948d34087c961938
+Author: Kostya Serebryany <konstantin.s.serebryany@gmail.com>
+Date:   Thu Dec 15 11:40:36 2016 -0800
+
+    docs
+
+commit b0140f4c9a06680068646bcb55aa6fde6624184e
+Author: Kostya Serebryany <konstantin.s.serebryany@gmail.com>
+Date:   Thu Dec 15 11:39:37 2016 -0800
+
+    docs
+
+commit 3d8df87eeebbcbf785b23dc2190a007f1aff5bc8
+Author: Kostya Serebryany <konstantin.s.serebryany@gmail.com>
+Date:   Thu Dec 15 11:36:11 2016 -0800
+
+    docs
+
+commit 2d8c722e3e20e56e52405c6f456ef3ade42cb14a
+Author: Kostya Serebryany <konstantin.s.serebryany@gmail.com>
+Date:   Thu Dec 15 11:16:18 2016 -0800
+
+    docs
+
+commit 9c1543966fb975742f05a22c813d6ffd7772038d
+Author: Kostya Serebryany <konstantin.s.serebryany@gmail.com>
+Date:   Thu Dec 15 11:15:59 2016 -0800
+
+    docs
+
+commit 72bd518f1a4047191b40553c802fe8814e6f2225
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Wed Dec 14 16:25:55 2016 -0800
+
+    Documentation
+    
+    Change-Id: I79781d17167d8faf352aa811ac66d46e87c648b5
+    Reviewed-on: https://team-review.git.corp.google.com/57393
+    Reviewed-by: Vitaly Buka <vitalybuka@google.com>
+
+commit 432b545bddec11981e8fb76cfac4d5a9aa761f9f
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Dec 9 14:42:09 2016 -0800
+
+    The first review
+    
+    Change-Id: Idb1340e3031de12c2bdec81ac1e76ad2577928d2
+    Reviewed-on: https://team-review.git.corp.google.com/56572
+    Reviewed-by: Vitaly Buka <vitalybuka@google.com>
+
+commit 4af611d72cff36161ab46498904740b4324ceaf9
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Sat Dec 3 18:57:32 2016 -0800
+
+    Refactoring
+    
+    Change-Id: I3b7c6573aa0f55611d121504e4c50c23c012ea7c
+
+commit 781853c9a32679eff18db3d5de5030b5e4dd06d0
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Mon Nov 21 23:09:35 2016 -0800
+
+    Simplified implementation
+    
+    Change-Id: If8c9cb6014cdec425b2ae501ea176d11aa6fdeac
+
+commit ac2b7bf89e8a5c45df52a4d9b7f044231ff4f048
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Mon Nov 21 14:07:02 2016 -0800
+
+    Simplified if
+    
+    Change-Id: I06e22c125655032951cecb16c584373a8974c5ac
+
+commit d4bb686ef81a7e103ea780f097043c7cb643ef2b
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Mon Nov 21 13:39:22 2016 -0800
+
+    Rename Mutate to MutateBytes
+    
+    Change-Id: I2c0c5f3be2f405805a87c07be4616805b697ae0c
+
+commit c9d2248ac886851c9332f02d4fca37e4d1447387
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Mon Nov 21 13:29:17 2016 -0800
+
+    Added stack
+    
+    Change-Id: I99f579c78034291b87746bb4f93704ca883b2567
+
+commit 2cfe02bf987797def15fb0cf04a75dcf2dde6a10
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Nov 18 16:34:09 2016 -0800
+
+    Added mutations
+    
+    Change-Id: I01c08c84fad198b0648e5408382000aa72c72e1a
+
+commit 043f27f24ca1d9d36e38f4c7e7846243d78630fe
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Nov 18 13:20:26 2016 -0800
+
+    Format
+    
+    Change-Id: I1cf102cf7c8ca8b3a47aa623098ed76bb072019a
+
+commit 13245af9228d20ade9217c6f7662da5061b7a027
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Nov 18 13:20:12 2016 -0800
+
+    Add initialization
+    
+    Change-Id: I4392725c609d988e8ba96a991b3fcf29956bd1f6
+
+commit 30de30933cd6be61ba3de3ac2b016033b5ef90df
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Nov 18 11:39:07 2016 -0800
+
+    Implemented adding non-repeated fields
+    
+    Change-Id: Ic5354d65c77c7fcbae5a7af58d0fb779291b9831
+
+commit 0e17fd76fe867ceb2069d9c952d251944a0adaf9
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Nov 18 10:02:46 2016 -0800
+
+    Basic logic
+    
+    Change-Id: I9f4eb33dfa699036c5c1a67746c6c077f79dc0ab
+
+commit 5ee534bf13cc08fd7974105b56bc55fff66f601d
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Nov 18 10:02:01 2016 -0800
+
+    Update dependencies
+    
+    Change-Id: I05538a56acc567de64358a650b54e084bd442424
+
+commit daafc10cdc92d6adfbcb41a2d046fc6877842bbc
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Fri Nov 18 10:01:13 2016 -0800
+
+    Remove extensions
+    
+    Change-Id: I00e9d600596bfb46146e27e6b762826f15e41dd6
+
+commit 7247cfe81865bbd304904e2ffb68daba6c28cc69
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Wed Nov 16 16:18:13 2016 -0800
+
+    Add more fields into proto file.
+    
+    Change-Id: Ic629d5509cac07dfe2b5583764020d05b7f2687c
+
+commit d6e65d0510a8835ca9f3642f9dcedd8001163b65
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Wed Nov 16 16:16:12 2016 -0800
+
+    Fixed URLs
+    
+    Change-Id: I8c512b46fe101ba27b71138ea1626b02267a86f3
+
+commit cddc71414988481c6b669331676afb4c029e73d3
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Wed Nov 16 15:40:15 2016 -0800
+
+    Main is not needed.
+    
+    Change-Id: I1c1899492d4b3b073675565c3747f7cf132d7d9b
+
+commit 1109c00daadd21f6f024c986d90e5d68bb770a16
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Thu Oct 20 17:25:19 2016 -0700
+
+    Added simple proto file.
+    
+    Change-Id: I251a3f4cdcfb6ca31aa1e34eaf1ff1801e3a2607
+
+commit c4593405fd91b34223462d4e17547e5f776b624a
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Thu Oct 20 16:17:52 2016 -0700
+
+    Build protobuf, gtest and zlib library
+    
+    Change-Id: Ia02441ef07f2545259eb88a3efc6dbb6cbbd122a
+
+commit 00b61070f715064a33b21f4fd396e4dfaf55ceb7
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Wed Oct 19 16:22:51 2016 -0700
+
+    Build empty test
+    
+    Change-Id: I6c1b0ab99cb689e488499275ff75920f17ee536a
+
+commit b5c12daba9d9a45326761dadebe7d92916b4daa0
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Wed Oct 19 13:12:41 2016 -0700
+
+    Add .clang-format and dummy header file.
+    
+    Change-Id: I5884b737d414435aaae72f9153605c03aedd4c0c
+
+commit d088a341441311b380c284e6a740f74ea49fa523
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Wed Oct 19 11:04:04 2016 -0700
+
+    Add AUTHORS and CONTRIBUTING
+    
+    Change-Id: Ie99a5187e4bbc03664c3bf28c40b68def78dd6fb
+
+commit cfb896c3598c93833dbeb93cda6e4a124e0259df
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Wed Oct 19 10:58:50 2016 -0700
+
+    Add README.md
+    
+    Change-Id: I0dd52084e08ee5f7dba15ac7c7918978e70de373
+
+commit 836912cd9dfc6de90696a324c986fa3d5ff25e5b
+Author: Vitaly Buka <vitalybuka@chromium.org>
+Date:   Tue Oct 18 19:05:09 2016 -0700
+
+    Add license
+    
+    Change-Id: I3a698a37a3610760dc30f69c276f674546d88953

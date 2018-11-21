@@ -1,0 +1,83 @@
+git log -10
+commit 6adaac3368bd8ba8db746ee9781b16560f72379e (HEAD -> master, origin/master, origin/HEAD)
+Merge: cc7be19 0a6b817
+Author: logwang <whl739@163.com>
+Date:   Wed Jan 31 12:45:26 2018 +0800
+
+    Merge pull request #158 from chadwill/master
+    
+    Nginx : Fix Compile error with `--with-stream`
+
+commit 0a6b81772e4a8365bb1374ed5fcbf2d37cb78249
+Author: chenwei <chadwill@aliyun.com>
+Date:   Wed Jan 31 09:02:25 2018 +0800
+
+    Nginx : Fix Compile error
+    Fix compile error when configure nginx with --with-stream
+
+commit cc7be195f481571b9b6904b0ac88384a384e32a4
+Merge: 1714031 bb4234c
+Author: logwang <whl739@163.com>
+Date:   Mon Jan 29 19:01:26 2018 +0800
+
+    Merge pull request #156 from chadwill/patch-1
+    
+    Update F-Stack_Nginx_APP_Guide.md
+
+commit 17140315e7c9fbdd95a384433fb4103b89225b65
+Merge: 9f78ac5 dcfbe1a
+Author: logwang <whl739@163.com>
+Date:   Mon Jan 29 19:01:11 2018 +0800
+
+    Merge pull request #151 from chadwill/master
+    
+    Nginx : Get rid of "ff_host" thread
+
+commit dcfbe1ad3906451e571e6c3809d833dd974b24ff
+Author: chenwei <chadwill@aliyun.com>
+Date:   Mon Jan 29 16:41:35 2018 +0800
+
+    Nginx: Restore ngx_get_connection and ngx_free_connection
+    
+    The code that we used to preserve ngx_get_connection and ngx_free_connection thread safety , is not necessary now.
+
+commit bb4234c89c93a3c8387e345f412f9eb56a625e4d
+Author: 陈威 <xyzchw@aliyun.com>
+Date:   Fri Jan 26 21:44:05 2018 +0800
+
+    Update F-Stack_Nginx_APP_Guide.md
+    
+    Add description of directive  ```kernel_network_stack```.
+
+commit d918f1d3aefa5f154f2b5b7662df0fbd926721a4
+Author: 陈威 <xyzchw@aliyun.com>
+Date:   Fri Jan 26 17:44:47 2018 +0800
+
+    Update F-Stack_Nginx_APP_Guide.md
+    
+    Handle fstack in nginx ```work process cycle```. Refer to #151.
+
+commit 6484644fe3117ad51128993d99a2fb7582d84334
+Author: 陈威 <xyzchw@aliyun.com>
+Date:   Fri Jan 26 17:14:13 2018 +0800
+
+     Nginx: Cut out code about poll-kernel frequency
+    
+    Cut out unreasonable code about poll-kernel frequency
+
+commit 9f78ac569c561a65acf194864bb34a98c01f5711
+Author: logwang <logwang@tencent.com>
+Date:   Fri Jan 19 20:57:32 2018 +0800
+
+    ff_kern_timeout: optimize the timecounter.
+    
+    This timecounter implementation retrieves the current time and reports it
+    as the equivalent number of counts from a counter incrementing at 'hz'.
+
+commit 54e1dbca130c73c44db8e37cc196016e659e5705
+Author: logwang <logwang@tencent.com>
+Date:   Thu Jan 18 21:08:22 2018 +0800
+
+    FreeBSD: initialize `mp_ncpus`.
+    
+    Fix crash when executing `./sysctl -w kern.callout_stat=1`.

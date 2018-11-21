@@ -1,0 +1,32 @@
+# Build directory
+build/
+
+# Auto generated files
+ev/external/tclap/docs/Makefile
+fs/lib/bus_if.h
+fs/lib/cryptodev_if.c
+fs/lib/cryptodev_if.h
+fs/lib/device_if.h
+fs/lib/filtered_predefined_macros.h
+fs/lib/linker_if.c
+fs/lib/linker_if.h
+fs/lib/vnode_if.h
+fs/lib/vnode_if_newproto.h
+fs/lib/vnode_if_typedef.h
+
+# Archives and object files
+fs/tools/compat/libffcompat.a
+fs/tools/libmemstat/libmemstat.a
+fs/tools/libnetgraph/libnetgraph.a
+fs/tools/libutil/libutil.a
+*.o
+
+#Binaries built in source code
+fs/tools/arp/arp
+fs/tools/ifconfig/ifconfig
+fs/tools/ipfw/ipfw
+fs/tools/netstat/netstat
+fs/tools/ngctl/ngctl
+fs/tools/route/route
+fs/tools/sysctl/sysctl
+fs/tools/top/top

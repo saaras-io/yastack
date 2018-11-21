@@ -1,0 +1,62 @@
+commit 84d3c90b93afd52a7ba3d659d144b996a36fa82b
+Author: gabime <gmelman1@gmail.com>
+Date:   Wed Feb 28 00:11:50 2018 +0200
+
+    Fixed g++ 4.9 warnings after the clang-tidy fixes
+
+commit 2e973c8b3d983addfc16a3d0a43a78768a7098f6
+Merge: abc0d43 de642b6
+Author: Gabi Melman <gmelman1@gmail.com>
+Date:   Tue Feb 27 23:41:24 2018 +0200
+
+    Merge pull request #647 from DanielChabrowski/clang-tidy
+    
+    Applied some of clang-tidy fixes
+
+commit de642b6263e4ffb78e502e46cd8aa553399f159c
+Author: Daniel Chabrowski <dantezstudio@gmail.com>
+Date:   Sun Feb 25 12:41:18 2018 +0100
+
+    astyle applied
+
+commit 5355bd3a8fa722268c5338df1cce0591b05a3ab2
+Author: Daniel Chabrowski <dantezstudio@gmail.com>
+Date:   Sun Feb 25 12:39:37 2018 +0100
+
+    readability-named-parameter
+
+commit 35a843f8b6bd8fa9077bc7bbf3c1baf87c1bd38d
+Author: Daniel Chabrowski <dantezstudio@gmail.com>
+Date:   Sun Feb 25 12:24:21 2018 +0100
+
+    modernize-return-braced-init-list
+
+commit 17caf77784dc8266732a95171c8ab55c109b7aee
+Author: Daniel Chabrowski <dantezstudio@gmail.com>
+Date:   Sun Feb 25 12:12:34 2018 +0100
+
+    google-build-namespaces
+
+commit 0c94ce003993a10251ed472d109106f7abe344c2
+Author: Daniel Chabrowski <dantezstudio@gmail.com>
+Date:   Sun Feb 25 02:43:26 2018 +0100
+
+    deleted copy op and a little format
+
+commit af50d5ef1f4eeb87ef25d3070efbbbc1ce61526c
+Author: Daniel Chabrowski <dantezstudio@gmail.com>
+Date:   Sun Feb 25 02:19:26 2018 +0100
+
+    readability-inconsistent-declaration-parameter-name
+
+commit 9ce66f2c9aaec41025798683b61a308185f4b101
+Author: Daniel Chabrowski <dantezstudio@gmail.com>
+Date:   Sun Feb 25 01:58:09 2018 +0100
+
+    modernize-pass-by-value
+
+commit ad624432d85936facc410eed108e4106a3174d6a
+Author: Daniel Chabrowski <dantezstudio@gmail.com>
+Date:   Sun Feb 25 01:40:46 2018 +0100
+
+    google-explicit-constructor

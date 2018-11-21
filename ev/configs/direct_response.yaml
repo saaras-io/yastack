@@ -1,0 +1,47 @@
+admin:
+  access_log_path: /tmp/admin_access.log
+  address:
+    socket_address: { address: 0.0.0.0, port_value: 9995, provider: HOST }
+
+static_resources:
+  listeners:
+  - name: listener_0
+    address:
+        socket_address: { address: 0.0.0.0, port_value: 10000, provider: FP}
+    filter_chains:
+    - filter_chain_match:
+      tls_context:
+        common_tls_context:
+            tls_certificates:
+                - certificate_chain: { filename: "yastack.app.cert" }
+                  private_key: {filename: "yastack.app.key" }
+      filters:
+      - name: envoy.http_connection_manager
+        config:
+          stat_prefix: ingress_http
+          codec_type: AUTO
+          route_config:
+            name: local_route
+            virtual_hosts:
+            - name: local_service
+              domains: ["*"]
+              routes:
+              - match: { prefix: "/" }
+                #route: { cluster: service_local}
+                #direct_response: { status: 200, body: {filename: /home/ubuntu/falcon/build2/blah.txt}}
+                #direct_response: { status: 200, body: {filename: /home/ubuntu/falcon5/falcon/test/blah_empty.txt }}
+                #direct_response: { status: 200, body: {filename: /home/ubuntu/falcon5/falcon/test/blah_1024.txt }}
+                #direct_response: { status: 200, body: {filename: /home/ubuntu/falcon5/falcon/test/blah_10k.txt }}
+                #direct_response: { status: 200, body: {filename: /home/ubuntu/falcon5/falcon/test/blah_100k.txt }}
+                #direct_response: { status: 200, body: {filename: /home/ubuntu/falcon5/falcon/test/blah_1M.txt }}
+                #direct_response: { status: 200, body: {filename: /home/ubuntu/falcon5/falcon/test/blah_100M.txt }}
+                direct_response: { status: 200, body: {filename: /home/ubuntu/falcon5/falcon/test/blah_1G.txt }}
+          http_filters:
+          - name: envoy.router
+  clusters:
+  - name: service_local
+    connect_timeout: 0.25s
+    type: STATIC
+    dns_lookup_family: V4_ONLY
+    lb_policy: ROUND_ROBIN
+    hosts: [ { socket_address: { address: 127.0.0.1, port_value: 8000 }}, { socket_address: { address: 127.0.0.1, port_value: 8001 }}]

@@ -1,0 +1,12 @@
+commit b14ce1d45fbe60ba85019dae7ac7d47206277597
+Author: Venil Noronha <venil.noronha@gmail.com>
+Date:   Wed Jul 18 21:28:44 2018 -0700
+
+    syscall: latch errno deeper in the buffer implementation (#3880)
+
+    The errno set by a syscall can be overwritten by code (e.g. logging) as
+    it propagates up through the call stack. This commit refactors the
+    buffer API to allow for returning the errno from deeper down the call
+    stack i.e. as soon as a syscall is performed.
+
+    Signed-off-by: Venil Noronha <veniln@vmware.com>

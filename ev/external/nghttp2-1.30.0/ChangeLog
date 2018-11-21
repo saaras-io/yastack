@@ -1,0 +1,176 @@
+commit f0836c7e3945fde6044e840475461f83d4e87d8c (HEAD, tag: v1.30.0, origin/master, origin/HEAD, master)
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-02-02
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-02-02
+
+    Update manual pages
+
+commit 25db178b7dfd109b24cfe402a1dbead0b4f5fbdb
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-02-02
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-02-02
+
+    Bump up version number to 1.30.0, LT revision to 29:2:15
+
+commit 1b6713e6ec185bfd6a8375af282dd6fa02a2ab93
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-02-02
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-02-02
+
+    Update AUTHORS
+
+commit c1a496cf4e5369d375aab732f170f3c7cdeef0ce
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-02-02
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-02-02
+
+    nghttpx: Fix bug that h1 backend idle timeout expires sooner
+
+commit e098a2113213825e2121eeaf4ced0608b47222d8
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-01-28
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-01-28
+
+    mruby: Fix bug that response header is unexpectedly overwritten
+    
+    The bug is the same bug fixed by
+    6deee2037dd76c7bc612a33d31dc5c8787427844, but in response handler.
+
+commit 0ba4bf51e459cb223d9d7b493680f81e4db8440b
+Merge: 6761a933 6deee203
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-01-28
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2018-01-28
+
+    Merge pull request #1120 from dylanplecki/issue-1119-mruby-header-overwrite
+    
+    Fix #1119: Overwrite of first header on mruby call to env.req.set_header(..)
+
+commit 6deee2037dd76c7bc612a33d31dc5c8787427844
+Author:     Dylan Plecki <dplecki@uber.com>
+AuthorDate: 2018-01-26
+Commit:     Dylan Plecki <dplecki@uber.com>
+CommitDate: 2018-01-26
+
+    Fix #1119: Stop overwrite of first header on mruby call to env.req.set_header(..)
+
+commit 6761a933fe783e9a69eb7cb9d48cae0c31a94f88
+Merge: 652f57e7 5cc3d159
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-01-14
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2018-01-14
+
+    Merge pull request #1105 from nghttp2/nghttpx-upgrade-scheme
+    
+    nghttpx: Add upgrade-scheme parameter to backend option
+
+commit 5cc3d159e1a5bdb8f54121571a7dc30174723535
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-01-08
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-01-08
+
+    nghttpx: Add upgrade-scheme parameter to backend option
+    
+    If "upgrade-scheme" parameter is present in backend option along with
+    "tls" paramter, HTTP/2 :scheme pseudo header field is changed to
+    "https" from "http" when forwarding a request to this particular
+    backend.  This is a workaround for a server which requests "https"
+    scheme on HTTP/2 connection encrypted by TLS.
+
+commit 652f57e79d7ca07480c04f0ed473a5ad9adee0ae
+Merge: 0fbb46ed acd6b40e
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-01-08
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2018-01-08
+
+    Merge pull request #1104 from nghttp2/allow-ping-after-goaway
+    
+    Allow PING frame to be sent after GOAWAY
+
+commit acd6b40e4cd2efe1f197f6f7bea4663fb9a27372
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-01-08
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-01-08
+
+    Allow PING frame to be sent after GOAWAY
+
+commit 0fbb46edd640187d50e764d602ea5f92eb55f6f3
+Merge: 6ad629de a31a2e3b
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-01-04
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2018-01-04
+
+    Merge pull request #1101 from nghttp2/remember-pushed-links
+    
+    nghttpx: Remember which resource is pushed
+
+commit 6ad629de47f46aedf962166aef2638cf12eebc46
+Merge: a776b0db 74754982
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-01-04
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2018-01-04
+
+    Merge pull request #1102 from nghttp2/fix-missing-alpn-validation
+    
+    nghttpx: Fix missing ALPN validation (--npn-list)
+
+commit 74754982f118b67b39547fd11434f5453aab5d0a
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-01-04
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-01-04
+
+    nghttpx: Fix missing ALPN validation (--npn-list)
+    
+    This commit fixes the bug that ALPN validation does not occur when
+    ALPN list is not sent from client.
+
+commit a31a2e3b2c410b15c2d256bf7e5ddf2b1cfb4fb3
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-01-04
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-01-04
+
+    nghttpx: Remember which resource is pushed
+    
+    Remember which resource is pushed in order to conform to the semantics
+    described in RFC 8297.
+
+commit a776b0dbcc422f4bd262fd40e8dcd4f7c90a0c10
+Merge: 72f52716 cfd926f0
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2017-12-20
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2017-12-20
+
+    Merge pull request #1092 from nghttp2/define-103
+    
+    src: Define 103 status code
+
+commit cfd926f09b4731e1e30a78167ccff930a799c457
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2017-12-20
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2017-12-20
+
+    src: Define 103 status code
+
+commit 72f52716ae52ade7f460b2afd30f24ac52a70003
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2017-12-19
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2017-12-19
+
+    Bump up version number to 1.30.0-DEV

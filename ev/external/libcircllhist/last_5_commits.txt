@@ -1,0 +1,977 @@
+commit 34f3df3c340f785ec3cbd6844e9aa52d70529d07
+Merge: 7b2c986 8fa7083
+Author: cody271 <cody271@gmx.com>
+Date:   Fri May 25 15:49:55 2018 -0700
+
+    Merge pull request #36 from circonus-labs/count_nearby
+    
+    Add hist_approx_count_nearby()
+
+commit 8fa708382a04c26d4cf2fac2546c009a33b192f5
+Author: cody271 <cody271@gmx.com>
+Date:   Fri May 25 15:29:45 2018 -0700
+
+    Add hist_approx_count_nearby()
+    
+    from Lua Histogram_Base:count_bucket()
+
+commit 7b2c9860817023b3805809eaaf0842a98c951223
+Merge: 9e3ef56 0016361
+Author: Theo Schlossnagle <postwait@users.noreply.github.com>
+Date:   Thu May 24 09:04:27 2018 -0400
+
+    Merge pull request #34 from circonus-labs/null_safety
+    
+    Support null histograms sensibly
+
+commit 9e3ef56d576a23d723d94ef08f7fa8b2d1d3d182
+Merge: 6c69d88 c7778a1
+Author: cody271 <cody271@gmx.com>
+Date:   Wed May 23 14:24:34 2018 -0700
+
+    Merge pull request #35 from cody271/improve_ci_travis
+    
+    Improve CI and add Travis
+
+commit c7778a1d2a8168006f3bb9435eaee9bfe2d333fd
+Author: cody271 <cody271@gmx.com>
+Date:   Wed May 23 14:04:33 2018 -0700
+
+    Add buildtools/install-dependencies.sh
+
+commit 001636101647536670ffe61c67ffc86a070ca6a7
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Wed May 23 10:16:36 2018 -0400
+
+    Support null histograms sensibly
+
+commit 172df983c666e3900b259abd1df69e839e1bbcc2
+Author: cody271 <cody271@gmx.com>
+Date:   Tue May 22 16:13:57 2018 -0700
+
+    Add Travis CI
+
+commit 22c46235c4a56538df9b45987592852369849d50
+Author: cody271 <cody271@gmx.com>
+Date:   Tue May 22 16:09:09 2018 -0700
+
+    runTest.sh Add Python tests to test suite
+
+commit c538bc58d143b4ca9166eb8aadd593b178906c17
+Author: cody271 <cody271@gmx.com>
+Date:   Tue May 22 16:05:12 2018 -0700
+
+    histogram_c_test.lua Return -1 on error like histogram_test.c
+
+commit 6c69d88e7c9f7c82d06af251d5582ecea488b313
+Merge: 94d7ba6 be76282
+Author: cody271 <cody271@gmx.com>
+Date:   Tue May 22 19:08:41 2018 -0700
+
+    Merge pull request #33 from circonus-labs/histogram_v1_lua_funcs
+    
+    Add functions from Histogram v1 Lua to C
+
+commit be76282042ec0a7127d3eff49b5668afabbfa756
+Author: cody271 <cody271@gmx.com>
+Date:   Tue May 22 12:11:02 2018 -0700
+
+    Return NaN if total count is zero in new hist_approx functions
+
+commit 400f594246986517f0aab03cada5d73abb041a68
+Author: cody271 <cody271@gmx.com>
+Date:   Mon May 21 13:07:17 2018 -0700
+
+    Add Python bindings to new hist_approx functions
+
+commit 7f0c887c0ad5286bb5435557ce1bb6cd3f6c6d2a
+Author: cody271 <cody271@gmx.com>
+Date:   Mon May 21 13:06:26 2018 -0700
+
+    Add documentation for new hist_approx functions
+
+commit d63c932986b9bd6575476311ca9c1ba324d5ffd4
+Author: cody271 <cody271@gmx.com>
+Date:   Thu May 17 15:00:06 2018 -0700
+
+    hist_approx_count_XXX() Only support single threshold value
+
+commit c212e0f8ef17e029990e6a462e32e77c63b1a108
+Author: cody271 <cody271@gmx.com>
+Date:   Thu May 17 14:20:02 2018 -0700
+
+    Add hist_approx_count_below() and hist_approx_count_above()
+    
+    from Lua Histogram_Base:count_XXX()
+
+commit ee2046ab7238627eb2413866fab2ba9c28bc1bd5
+Author: cody271 <cody271@gmx.com>
+Date:   Mon May 14 12:10:50 2018 -0700
+
+    Add hist_approx_moment() from Lua Histogram_Base:moment()
+
+commit 0aacf5746c3f9aa7f150420628b6c91e5f5cc87c
+Author: cody271 <cody271@gmx.com>
+Date:   Mon May 14 12:09:03 2018 -0700
+
+    Add hist_approx_stddev() from Lua Histogram_Base:stddev()
+
+commit 94d7ba6e6331b913038a531d697722fce0cd42cb
+Merge: c839231 b380de3
+Author: Heinrich Hartmann <heinrich@heinrichhartmann.com>
+Date:   Mon May 21 19:59:49 2018 +0200
+
+    Merge pull request #32 from circonus-labs/more-docs
+    
+    Add more docs
+
+commit b380de3f119e69296e3c28d4de1eade71d91061b
+Author: Heinrich Hartmann <heinrich@heinrichhartmann.com>
+Date:   Mon May 21 17:51:00 2018 +0000
+
+    Add doxygen mainpage
+
+commit 1bf4584500aa66477e403aa1fac9fd808afd3eb2
+Author: Heinrich Hartmann <heinrich@heinrichhartmann.com>
+Date:   Thu May 17 23:18:42 2018 +0200
+
+    Fix typo in python ffi bindings
+
+commit aaf2db8c15c839425c806b55d00133f878440a37
+Author: Heinrich Hartmann <heinrich@heinrichhartmann.com>
+Date:   Wed May 16 17:53:12 2018 +0200
+
+    Strip down doxygen docs
+
+commit 0deda0d493770ac08055c160b38e2152b6cc62e1
+Author: Heinrich Hartmann <heinrich@heinrichhartmann.com>
+Date:   Wed May 16 17:53:03 2018 +0200
+
+    Add python + lua bindings to readme.
+
+commit c8392314527e9f926ba9e68ebb3693cc0945fb3e
+Author: cody271 <cody271@gmx.com>
+Date:   Wed May 16 11:39:11 2018 -0700
+
+    Explicitly use GNU utilities in FFI shell scripts
+
+commit d4805b662e9f6c480e9543ec834c5cd5a3d52be3
+Merge: 1c8564b 1cd8116
+Author: Heinrich Hartmann <heinrich@heinrichhartmann.com>
+Date:   Sun May 13 13:07:02 2018 +0200
+
+    Merge pull request #31 from circonus-labs/ffi-cleanup
+    
+    Fix and clenaup python/lua FFI binging generation
+
+commit 1cd811647efed4f71e115c1869964a04eb29d35c
+Author: Heinrich Hartmann <heinrich@heinrichhartmann.com>
+Date:   Sat May 12 14:19:35 2018 +0200
+
+    Fix and clenaup python/lua FFI binging generation
+
+commit 1c8564b8c884a872f29d93dcf74c7f3cd04f23ee
+Merge: 476687a dcb95fe
+Author: Heinrich Hartmann <heinrich@heinrichhartmann.com>
+Date:   Thu May 10 23:07:08 2018 +0200
+
+    Merge pull request #30 from circonus-labs/pycircllhist
+    
+    Add python bindings
+
+commit dcb95fee9f328889d4488b57b7c6765b4fefbf52
+Author: Heinrich Hartmann <heinrich@heinrichhartmann.com>
+Date:   Thu May 10 20:59:40 2018 +0200
+
+    Add merge, to/from_b64
+
+commit 4ac0440e0b029a1be6a7e2c98d5ac25412451cd9
+Author: Heinrich Hartmann <heinrich@heinrichhartmann.com>
+Date:   Thu May 10 18:40:40 2018 +0000
+
+    Fix __str__
+
+commit 795e3816a5adefd922663ab40fb89aac164a80d8
+Author: Heinrich Hartmann <heinrich@heinrichhartmann.com>
+Date:   Thu May 10 20:26:39 2018 +0200
+
+    Add __slots__ ...
+
+commit 0fcf4b71e0be282251cc29e314df5e1a6b0a6ed3
+Author: Heinrich Hartmann <heinrich@heinrichhartmann.com>
+Date:   Thu May 10 20:25:02 2018 +0200
+
+    Python: Add to_dict/from_dict
+
+commit 73941405baff9751d31f2bb4ad492030eee086e4
+Author: Heinrich Hartmann <heinrich@heinrichhartmann.com>
+Date:   Thu May 10 20:24:26 2018 +0200
+
+    Python: Look for circllhist.so in more locations
+
+commit dd3b67089f01f07921f670bccfd32010281308b3
+Author: Heinrich Hartmann <heinrich@heinrichhartmann.com>
+Date:   Thu May 10 11:12:20 2018 +0200
+
+    Add tests, address review comments
+
+commit 31f6c2f0158e4729c90b8e0978bb1668ca56fe6f
+Author: Heinrich Hartmann <heinrich@heinrichhartmann.com>
+Date:   Wed May 9 23:58:46 2018 +0200
+
+    Add python bindings
+
+commit 476687ac9cc636fc92ac3070246d757ae6854547
+Merge: 9cb4a50 f8dcc90
+Author: Philip Maddox <pmaddox@circonus.com>
+Date:   Tue May 8 10:32:06 2018 -0400
+
+    Merge pull request #29 from alyssawilk/fix
+    
+    Removing unused variable d_copy
+
+commit f8dcc90b4423cf267ee8e753a87220355e1bde2d
+Author: Alyssa Wilk <alyssar@chromium.org>
+Date:   Mon May 7 11:18:38 2018 -0400
+
+    Removing unneeded and unused copy
+
+commit 9cb4a504f31ff172dd9f43fc805fd17291b102a9
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Mon Apr 30 19:39:53 2018 -0400
+
+    just make hist check safe for NULL
+
+commit ae4f644f0eb613c69375baffe067a1488ed8ca74
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Mon Apr 30 15:21:41 2018 -0400
+
+    address coverity warning
+
+commit 0c44450723e34c9d8768e69b11bf919be83fd2ed
+Merge: 21bb93c dbf854c
+Author: Theo Schlossnagle <postwait@users.noreply.github.com>
+Date:   Mon Apr 30 14:00:10 2018 -0400
+
+    Merge pull request #27 from circonus-labs/more_asserts
+    
+    Comprehensive assertions and bucket validation
+
+commit dbf854ca1c772e2075725768c588a912b3aa7700
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Mon Apr 30 09:42:44 2018 -0400
+
+    switch to standard NDEBUG for assert elision
+
+commit d185fc1542001197a512963b8cc8d0f2f96d1ef6
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Mon Apr 30 07:44:46 2018 -0400
+
+    Address improper handling of int_scaled 100.
+    
+      * now correctly [10,2] instead of [100,1].
+
+commit 54db7e5d24635db894acd66fea2db24cb4f1b812
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Sun Apr 29 20:02:00 2018 -0400
+
+    Add more asserts around bin structure
+
+commit 21bb93c855084faee6c63ac2d8fd635a25403fef
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Fri Apr 27 17:31:59 2018 -0400
+
+    more paranoid assertions
+
+commit fd9d0b4fe6b6c3d8de99eac25d9506edff37ae96
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Fri Apr 27 16:20:01 2018 -0400
+
+    bounds check needed bins.
+
+commit 58e3baaa7bd9c6dc3121626d3e34bc0e63d562ef
+Merge: 97ef5e0 0a1dbf2
+Author: Fred Moyer <fred@redhotpenguin.com>
+Date:   Thu Apr 12 11:20:53 2018 -0700
+
+    Merge pull request #26 from circonus-labs/typo_fix
+    
+    Various typo fixes and copyright update
+
+commit 0a1dbf219c4840c459ca59529857c6fed43e7b44
+Author: Fred Moyer <fred@redhotpenguin.com>
+Date:   Tue Apr 10 23:03:20 2018 -0700
+
+    one more typo
+
+commit 4799f2328de934d844155673f217ddac37c93fa5
+Author: Fred Moyer <fred@redhotpenguin.com>
+Date:   Tue Apr 10 22:50:11 2018 -0700
+
+    Various typo fixes and copyright update
+
+commit 97ef5e088fd01fa8ec5a86334a6308ac0d51ea6f
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Wed Mar 28 19:43:26 2018 -0400
+
+    Histograms with a 0 count in smallest bin could confuse q(0).
+    
+    Fixes #25
+
+commit eea8653b7e5abd8b5f2701e20e0334802f6d2dfb
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Wed Mar 28 04:27:19 2018 -0400
+
+    promote q_in to const in approx_quantile
+
+commit 564499477a3dce7d96e73b9539f4cd78ef5ee80b
+Merge: 92542d1 380383c
+Author: Theo Schlossnagle <postwait@users.noreply.github.com>
+Date:   Thu Apr 5 10:10:41 2018 -0400
+
+    Merge pull request #24 from circonus-labs/fix_quantile_empty
+    
+    empty histogram has quantiles as if one sample in [1.0,1.1)
+
+commit 92542d1e20b68cf87c960f286d8a7d54fc364550
+Merge: 2ccf63d be75630
+Author: Theo Schlossnagle <postwait@users.noreply.github.com>
+Date:   Tue Apr 3 12:29:13 2018 -0400
+
+    Merge pull request #23 from circonus-labs/no_alloca
+    
+    remove dependency upon alloca
+
+commit 380383c343a76a1431c9a032ab8aecb961b47343
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Wed Mar 28 03:49:05 2018 -0400
+
+    empty histogram has quantiles as if one sample in [1.0,1.1)
+
+commit be7563060f50518e030191d81cec0730d869998e
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Mon Mar 26 23:21:11 2018 -0400
+
+    be more conservative on stack usage
+
+commit 10ad7b33b31c8ea330e4ff8d81150b27d67e18b7
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Mon Mar 26 19:13:20 2018 -0400
+
+    remove dependency upon alloca
+
+commit 2ccf63d1b52d67f36436b513755d6705678f50bc
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Mon Mar 26 10:07:03 2018 -0400
+
+    fix C header to make C++ happy
+
+commit bb73e93ba23b5746ea15d95c21ee8536168c486c
+Author: Riley Berton <riley.berton@circonus.com>
+Date:   Fri Aug 18 11:22:22 2017 -0400
+
+    add allocator replacement support, tests for same (#22)
+    
+    * add allocator replacement support, tests for same
+    
+    * remove realloc from hist_allocator_t
+
+commit df0cf558fdc4ba2b7bcefaab01ee99180d8e3725
+Merge: 09f74f8 69a7239
+Author: Theo Schlossnagle <postwait@users.noreply.github.com>
+Date:   Tue Aug 8 16:25:30 2017 -0400
+
+    Merge pull request #21 from SamuelWM01/coverity_fixes
+    
+    Special memory fix
+
+commit 09f74f8ffab038674ff9d657c2fbc7b0c5d6743f
+Merge: 72b32a6 271ca87
+Author: Theo Schlossnagle <postwait@users.noreply.github.com>
+Date:   Tue Aug 8 16:20:45 2017 -0400
+
+    Merge pull request #15 from circonus-labs/llvm_scan_build_cleanup
+    
+    quiet LLVM scan-build
+
+commit 69a7239f319ed09c2d6a54b43450733c97059150
+Author: Sam Winters-McCabe <samuel.wintersmccabe@circonus.com>
+Date:   Tue Aug 8 20:20:25 2017 +0000
+
+    Special memory fix
+    Use a temp variable to effectively free past values as they are overwritten.
+
+commit 72b32a669c225230050cb77dcd8025215a8cf23e
+Merge: 845fc43 a13904e
+Author: Theo Schlossnagle <postwait@users.noreply.github.com>
+Date:   Tue Aug 8 15:57:58 2017 -0400
+
+    Merge pull request #20 from SamuelWM01/coverity_fixes
+    
+    More coverity fixes
+
+commit a13904eaab0cb32bd6c935fff2148f7882d57100
+Author: Sam Winters-McCabe <samuel.wintersmccabe@circonus.com>
+Date:   Tue Aug 8 19:54:43 2017 +0000
+
+    Additional free
+    Added another hist_free(h) to eliminate further coverity insatisfaction.
+
+commit a4c4a627b272206fbc9502c99b9abffd39afb7e6
+Author: Sam Winters-McCabe <samuel.wintersmccabe@circonus.com>
+Date:   Tue Aug 8 19:42:46 2017 +0000
+
+    More coverity fixes
+    Caused by past patches not fully appealing coverity.
+
+commit 845fc43f39a2e9d0a5407b9fb70bd90908c736bb
+Merge: 7457a94 bb3efa8
+Author: Theo Schlossnagle <postwait@users.noreply.github.com>
+Date:   Tue Aug 8 14:19:56 2017 -0400
+
+    Merge pull request #19 from SamuelWM01/coverity_fixes
+    
+    Even more fixes
+
+commit bb3efa86930f4783aa289dcda77ead2d8c556c30
+Author: Sam Winters-McCabe <samuel.wintersmccabe@circonus.com>
+Date:   Tue Aug 8 18:17:23 2017 +0000
+
+    Even more fixes
+    Added missing semicolon.
+
+commit 7457a94fb55677820f060964856c8301a452dbf6
+Merge: d2f4d08 82dfa60
+Author: Theo Schlossnagle <postwait@users.noreply.github.com>
+Date:   Tue Aug 8 13:07:19 2017 -0400
+
+    Merge pull request #18 from SamuelWM01/coverity_fixes
+    
+    More error fixes
+
+commit 82dfa605ffbee4be6a32e0e095ac5238927ab260
+Author: Sam Winters-McCabe <samuel.wintersmccabe@circonus.com>
+Date:   Tue Aug 8 16:49:43 2017 +0000
+
+    More error fixes
+    Fixed improper usage of hist_free
+
+commit d2f4d08c09eac74ab7d60542f0fa085755df6844
+Merge: 0de11e6 aa729fd
+Author: Theo Schlossnagle <postwait@users.noreply.github.com>
+Date:   Tue Aug 8 12:38:49 2017 -0400
+
+    Merge pull request #17 from SamuelWM01/coverity_fixes
+    
+    Fixed that which broke everything
+
+commit aa729fd3ead4d351cf55ef23badd4a7ed9c18eee
+Author: Sam Winters-McCabe <samuel.wintersmccabe@circonus.com>
+Date:   Tue Aug 8 16:32:43 2017 +0000
+
+    Fixed that which broke everything
+    Forget a double quote.
+
+commit 0de11e6e62a761cf8e5354ef7583fb64aaabe22d
+Merge: 038dc72 ebdf8f9
+Author: Theo Schlossnagle <postwait@users.noreply.github.com>
+Date:   Tue Aug 8 12:01:12 2017 -0400
+
+    Merge pull request #16 from SamuelWM01/coverity_fixes
+    
+    Coverity fixes
+
+commit ebdf8f9f0519184f300a1b3e45c32dc219a20cc5
+Author: Sam Winters-McCabe <samuel.wintersmccabe@circonus.com>
+Date:   Tue Aug 8 15:56:51 2017 +0000
+
+    Error Message
+    Adds an error message should cnt be equal to zero.
+
+commit 980bd52653296b48229ce0849287638ec51e37e3
+Author: Sam Winters-McCabe <samuel.wintersmccabe@circonus.com>
+Date:   Tue Aug 8 15:33:17 2017 +0000
+
+    Formatting Fix
+    Fixed a indentation error in the if-else statement I added.
+
+commit a0b1ec8478ebac06955f6be9637ef7ed7be43349
+Author: Sam Winters-McCabe <samuel.wintersmccabe@circonus.com>
+Date:   Tue Aug 8 15:18:22 2017 +0000
+
+    Slight error
+    Fixed adding code in wrong error and a past fix that may not have been adequate.
+
+commit 869cb239d479bc97309d39e742a71bcbf044026b
+Author: Sam Winters-McCabe <samuel.wintersmccabe@circonus.com>
+Date:   Tue Aug 8 14:44:09 2017 +0000
+
+    Coverity Fixes
+    Addressed a few issues seen on Coverity.
+
+commit 038dc72b753184ccdd69bdbf7f5448edd84510b7
+Author: Riley Berton <riley.berton@circonus.com>
+Date:   Wed Aug 2 17:40:49 2017 +0000
+
+    check return value of hist_serialize before b64 encoding
+
+commit 271ca872bcbb67f8b2b3ca9b8b912498d2bcd3c8
+Author: Aidan Cully <aidan.cully@circonus.com>
+Date:   Mon Jul 31 14:11:40 2017 -0400
+
+    quiet LLVM scan-build
+
+commit df0150d3dffcf9a0aa2d39f960049b409683db19
+Author: Riley Berton <riley.berton@circonus.com>
+Date:   Wed Jul 26 13:21:38 2017 +0000
+
+    fix strict-prototype compilation error
+
+commit 8720944db0e561c44325ed9baccf325b5c8f730f
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Wed Jul 19 06:56:04 2017 -0400
+
+    remove dead code
+
+commit 7ad2ffd9f86f4682dcb58ff49127aca44a09b76f
+Merge: e0807e9 56171d5
+Author: Theo Schlossnagle <postwait@users.noreply.github.com>
+Date:   Wed Jul 19 06:55:26 2017 -0400
+
+    Merge pull request #14 from circonus-labs/fix_encoding
+    
+    Fix potentially inflated bin count in serialization.
+
+commit 56171d5df2e3144d4e16d1e55c3ce1202ca41434
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Tue Jul 18 23:40:39 2017 -0400
+
+    Fix potentially inflated bin count in serialization.
+    
+    If there is a bin with count == 0 we would skip encoding it, but the
+    net short bin count would still include it.  This is actually quite
+    difficult to produce in the wild.
+
+commit e0807e9fddf3d638a0302b7ff704a134c2b3f16e
+Author: Riley Berton <riley.berton@circonus.com>
+Date:   Wed Jul 5 12:58:32 2017 +0000
+
+    fix compile WRT _XOPEN_SOURCE
+
+commit 7b0e1748d14ebd061e917202e282c84b61c646fa
+Author: Riley Berton <riley.berton@circonus.com>
+Date:   Mon Jul 3 16:57:21 2017 -0400
+
+    add a hist_clone function (#13)
+    
+    * add a hist_clone function
+    
+    * remove loop in favor of memcpy math
+
+commit c0e05a3b20b99a698273e3c95ce3cf70b7bd661f
+Merge: a334e81 29c01d2
+Author: Theo Schlossnagle <postwait@users.noreply.github.com>
+Date:   Fri Jun 9 18:38:27 2017 -0400
+
+    Merge pull request #12 from circonus-labs/hist_subtract
+    
+    add hist_subtract
+
+commit 29c01d27dad00d8ac1c7f4bcf5c52f714abd49e8
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Fri Jun 9 17:44:00 2017 +0000
+
+    add hist_subtract
+
+commit a334e81c1fe503bc7fd043840f2c01b059205417
+Author: Heinrich Hartmann <heinrich@heinrichhartmann.com>
+Date:   Thu May 25 13:44:07 2017 +0000
+
+    Fix miscount
+
+commit 2c69f17ccc745c56c2a00486482b0d6b010e2665
+Merge: 7cd6cbe 8a412a3
+Author: Heinrich Hartmann <heinrich@heinrichhartmann.com>
+Date:   Thu May 25 14:53:59 2017 +0200
+
+    Merge pull request #11 from circonus-labs/fix-zero
+    
+    Fix handling of 0-bucket
+
+commit 8a412a3aa144ef57582a836af551d23704b81312
+Author: Heinrich Hartmann <heinrich@heinrichhartmann.com>
+Date:   Thu May 25 12:44:11 2017 +0000
+
+    Fix handling of 0-bucket
+
+commit 7cd6cbe201725f5e2f63850110aad0e524beae7c
+Merge: 9aa7586 8b504a4
+Author: Heinrich Hartmann <heinrich@heinrichhartmann.com>
+Date:   Wed May 24 17:58:02 2017 +0200
+
+    Merge pull request #10 from circonus-labs/fix-quantiles
+    
+    Fixes to quantile calculations
+
+commit 8b504a4f7aac9b54873e0cb15868c2039ef0c7e4
+Author: Heinrich Hartmann <heinrich@heinrichhartmann.com>
+Date:   Wed May 24 15:29:20 2017 +0000
+
+    Fixes to make clean
+
+commit bbd8ad5fb4919da2ff7ba6ab852a263be3390c6b
+Author: Heinrich Hartmann <heinrich@heinrichhartmann.com>
+Date:   Wed May 24 12:15:48 2017 +0000
+
+    Fix nan handling in other places
+
+commit 5bfd7d06fdfa4890de42dd2b50fd17ce29ad40f3
+Author: Heinrich Hartmann <heinrich@heinrichhartmann.com>
+Date:   Wed May 24 12:15:34 2017 +0000
+
+    Fix nan handling in quantile calculations
+
+commit 9aa75865b0895c9d587015fd395ff8bf4cbdd5d4
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Thu Mar 23 13:07:35 2017 +0000
+
+    regenerate lua ffi info on header changes
+
+commit e4c3cf1204d2903b0f12dbc7a71df8dfd3ea0f08
+Merge: 9f82cd3 c71ec4f
+Author: Heinrich Hartmann <heinrich@heinrichhartmann.com>
+Date:   Fri Mar 3 17:42:13 2017 +0100
+
+    Merge pull request #9 from circonus-labs/hist_bucket_to_str
+    
+    Add hist_bucket_to_string method
+
+commit c71ec4fad194e385e297940e7c88d910e8991041
+Author: Heinrich Hartmann <heinrich@heinrichhartmann.com>
+Date:   Thu Mar 2 17:41:35 2017 +0100
+
+    Add hist_bucket_to_string method
+
+commit 5602278a1e6b1aa88d5ccc7842db79b7d17a248a
+Author: Heinrich Hartmann <heinrich@heinrichhartmann.com>
+Date:   Thu Mar 2 17:36:12 2017 +0100
+
+    Check for nan when converting to double/width
+
+commit 9f82cd34b1665ad992be64c0e7b9a554429bfff4
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Tue Feb 28 14:29:08 2017 +0000
+
+    Add CTF to libcircllhist
+
+commit 7a2f49cab33f6b9968fda932ac6441fdbc33ae60
+Author: Heinrich Hartmann <heinrich@heinrichhartmann.com>
+Date:   Fri Feb 24 14:12:30 2017 +0100
+
+    Add hist_compress_mbe (#7)
+    
+    * Add hist_compress_mbe function
+    * Add doxygen documentation for the API
+
+commit c2f1e4e0e034d10063fd47ceefcbc1d243106996
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Thu Feb 16 17:08:06 2017 +0000
+
+    compile with optimization by default
+
+commit f81b9ffa0efc5ffb006de9121a82cc6cc244bea5
+Author: Theo Schlossnagle <jesus@lethargy.org>
+Date:   Thu Feb 9 19:49:24 2017 +0000
+
+    alloca isn't in libc
+
+commit 7eefd292df78421d49a0570c655b06ca6cda7967
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Thu Feb 9 17:54:17 2017 +0000
+
+    actually look for alloca.h
+
+commit e96a186b192f00274b335acfcfdcf25bd9053106
+Author: Theo Schlossnagle <jesus@lethargy.org>
+Date:   Thu Feb 9 17:44:53 2017 +0000
+
+    Simplify build, remove carried crap
+
+commit 2572f692ace37e1fd3f837788baee6ebdcbf9087
+Author: Eric Sproul <github@nanobyte.org>
+Date:   Wed Feb 8 15:18:38 2017 -0500
+
+    add install steps
+
+commit f2f1a0b9670964f655fb7e48a69fc4c0dca78fc2
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Wed Sep 21 15:41:36 2016 +0000
+
+    implement hist_sample_count
+
+commit bba585f2e27ae2bac1bc09daec1fa76f08b05f68
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Wed Sep 21 14:28:38 2016 +0000
+
+    prevent (de)serialization of count==0 buckets
+
+commit 9f7d0b0bb7968581daafa5e9f2eba45b30e53b0b
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Wed Sep 21 13:49:07 2016 +0000
+
+    make sure we test both alloc and fast_alloc
+
+commit 9561fd562ef831ab231dbbf6edf7c324f73e32ac
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Tue Sep 20 17:07:55 2016 -0400
+
+    make sure we reset the counter in the perf tests
+
+commit e37b9f3d273248ecb2f564a83616b108e1974e6a
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Tue Sep 20 17:04:42 2016 -0400
+
+    fix memory estimate in comments
+
+commit fd0d5fe20267c77024bc42435c46c22aed95005e
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Tue Sep 20 17:02:39 2016 -0400
+
+    allowing for warming by skipping count=0 optimizatin
+
+commit da3ee52d852b5be20d69872846db0d1012cf7666
+Merge: a143c4e e122475
+Author: Theo Schlossnagle <postwait@users.noreply.github.com>
+Date:   Tue Sep 20 15:52:04 2016 -0400
+
+    Merge pull request #6 from circonus-labs/o1_update
+    
+    Add an optional 'fast' mode that uses more memory, but is fast
+
+commit e1224759e4a03a2342da7de3d69415db3f4a1140
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Tue Sep 20 19:49:56 2016 +0000
+
+    braces make this safer
+
+commit c7a1bbd9b91a430b3ba5072bfa0ce2f24812c6ca
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Mon Sep 19 20:25:07 2016 +0000
+
+    Add an optional 'fast' mode that uses more memory, but is fast
+    for buckets with more than one count. O(log N) insert of new bucket,
+    but O(1) updated of existin buckets.
+
+commit a143c4ea7da057a1a8d26e9cb0abc0bcb9f73266
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Mon Sep 19 18:15:05 2016 +0000
+
+    ever-so-slightly faster and more memory efficient
+
+commit 68286228ba51e72ac51e2883256b55f5c913fa1a
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Thu Aug 11 18:06:44 2016 -0400
+
+    fix lua ffi generation
+
+commit 24f31447418f19f938c36de5c131d144ecf8c562
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Thu Aug 11 16:56:18 2016 -0400
+
+    alloc bvs during initial alloc, add API for variable bin prealloc
+
+commit bba33626fd98e981900f3cbf92ec5e080f522287
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Thu Aug 11 16:55:13 2016 -0400
+
+    extra test
+
+commit a21b818e3006505dd9ff31863fc91d3c90eb7278
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Tue Aug 9 17:52:21 2016 -0400
+
+    fix test linkage to use in-tree bits, add static archive install lib
+
+commit 2be4f4f7c6ea4e29c23ff268b36f4049cb6bbace
+Merge: f9d3cc1 1982cbb
+Author: Theo Schlossnagle <postwait@users.noreply.github.com>
+Date:   Tue Aug 9 17:44:12 2016 -0400
+
+    Merge pull request #5 from circonus-labs/int_scale
+    
+    provide integer-based insertion for performance
+
+commit 1982cbb2e9c437a798e188d1976a54fe1480a075
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Tue Aug 9 21:35:14 2016 +0000
+
+    extra missing assert... all is well
+
+commit 873ceb0b999da67c1ab1364616cdd632e9724cf4
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Tue Aug 9 21:13:31 2016 +0000
+
+    provide integer-based insertion for performance
+
+commit f9d3cc1c09850c2a7dd648884fab73ff1f2a7a24
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Mon Aug 8 17:32:03 2016 -0400
+
+    add stdlib and sys/types for ssize_t on other platforms
+
+commit e311d631bd0856cce99a746abb03b437f2f40a40
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Mon Aug 8 17:00:12 2016 -0400
+
+    explicitly include alloca.h
+
+commit 1ea80bd8ef3c6512a08ceb7116ec9929f5fd8f87
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Mon Aug 8 16:58:58 2016 -0400
+
+    histogram_perf needs libm itself
+
+commit 201eca1110a2a942f6774d16acb6537efd2a367d
+Merge: 81019b5 2c39eba
+Author: Theo Schlossnagle <postwait@users.noreply.github.com>
+Date:   Mon Aug 8 16:55:44 2016 -0400
+
+    Merge pull request #4 from circonus-labs/extract_mtev
+    
+    Extract mtev and make this depend on nothing (but libm).
+
+commit 2c39ebaec8acd9dc52918d22d52bf4873428c03a
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Mon Aug 8 12:22:50 2016 -0400
+
+    Extract mtev and make this depend on nothing (but libm).
+
+commit 81019b59593fcc9d35b9257d02ad6d641aebeca6
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Fri Aug 5 13:26:32 2016 -0400
+
+    fix install target for Mac OS X
+
+commit d3cf973f1592ca72452f94b3d720235e6a84a210
+Merge: 019eef6 bf08d7c
+Author: Theo Schlossnagle <postwait@users.noreply.github.com>
+Date:   Fri Aug 5 09:38:28 2016 -0400
+
+    Merge pull request #3 from circonus-labs/mac_and_perf
+    
+    Add performance test and make this work on Mac OS X.
+
+commit bf08d7c0aa0d7a6920b1d5b64edc4358c5bbc118
+Author: Theo Schlossnagle <theo.schlossnagle@circonus.com>
+Date:   Mon Aug 1 13:27:21 2016 -0400
+
+    Add performance test and make this work on Mac OS X.
+
+commit 019eef64ad251f4deecb359f56016722ee4e8095
+Author: Riley Berton <riley.berton@circonus.com>
+Date:   Thu Jul 21 19:15:38 2016 +0000
+
+    add missing mkdir for install step
+
+commit f426059b60159b3a608db28e03ec909f48ad893d
+Author: Riley Berton <riley.berton@circonus.com>
+Date:   Thu Jul 21 15:08:37 2016 -0400
+
+    move the ffi lua file to datadir/lua/5.1/ (#2)
+    
+    * move the ffi lua file to datadir/lua/5.1/
+    
+    * missing DESTDIR
+
+commit fb21573a5f2cfee21d62a53f1693dc8f96f1212f
+Author: Riley Berton <riley.berton@circonus.com>
+Date:   Wed Jul 20 21:07:48 2016 +0000
+
+    fix generateLuaFiles.sh script by forcing gsed if present
+
+commit 10c8a3e3864ba54e1710293504dab4b3aaecc2aa
+Author: Riley Berton <riley.berton@circonus.com>
+Date:   Fri Jul 1 21:15:36 2016 +0000
+
+    get dependencies correct
+
+commit 31f95b7e5970299a981f7e8fb1acda1c72b4bad8
+Author: Riley Berton <riley.berton@circonus.com>
+Date:   Fri Jul 1 21:09:21 2016 +0000
+
+    include linker flags you vomitous mass
+
+commit 4cb81ba03833378d9bcd73657824c9569d192dc3
+Author: Riley Berton <riley.berton@circonus.com>
+Date:   Fri Jul 1 21:03:13 2016 +0000
+
+    add libs to correct target you wiggy slice
+
+commit 9e3c920841b23a889c08f35d7455765316696c74
+Author: Riley Berton <riley.berton@circonus.com>
+Date:   Fri Jul 1 20:59:33 2016 +0000
+
+    add -luuid to test program
+
+commit e25722a4b8f163923de8fd26bf368b2f94eaa8d0
+Author: Riley Berton <riley.berton@circonus.com>
+Date:   Fri Jul 1 20:54:55 2016 +0000
+
+    fix path to .so file
+
+commit 350a816f22f68245d22ea1bcdbbec6897b0f6a8e
+Author: Riley Berton <riley.berton@circonus.com>
+Date:   Fri Jul 1 20:46:52 2016 +0000
+
+    mkdir if src/lua is missing
+
+commit 14f7acd01cb44ca618f52fb6191fb765a0c04e71
+Merge: 88e96d9 700db83
+Author: Riley Berton <riley.berton@circonus.com>
+Date:   Fri Jul 1 16:26:17 2016 -0400
+
+    Merge pull request #1 from circonus-labs/add_tests
+    
+    add tests and ffi_libcircllhist.lua to installation
+
+commit 700db8318b9abe148bb45d489d44cb658b582583
+Author: Riley Berton <riley.berton@circonus.com>
+Date:   Fri Jul 1 19:37:38 2016 +0000
+
+    code review fixes
+
+commit 53fe5b2362730ff052bcd256a544f60ec4e9e1d3
+Author: Riley Berton <riley.berton@circonus.com>
+Date:   Fri Jul 1 19:06:26 2016 +0000
+
+    add tests and ffi_libcircllhist.lua to installation
+
+commit 88e96d9ff5448fef66fe197a7f845df739ea495d
+Author: Eric Sproul <esproul@omniti.com>
+Date:   Fri Jul 1 12:11:07 2016 -0400
+
+    Top-level license file
+
+commit 0546963be6b7258cdd39ac292a06a349238c7bae
+Author: Eric Sproul <esproul@omniti.com>
+Date:   Fri Jul 1 11:49:48 2016 -0400
+
+    Remove installation of unnecessary directories
+
+commit 5a1364ce7d313e1331ebe9cf11766ca8a17582e6
+Author: Riley Berton <riley.berton@circonus.com>
+Date:   Wed Jun 29 17:36:36 2016 +0000
+
+    add histogram_test
+
+commit bca142102a665fe4df9c0771c9dcda66625015ea
+Author: Riley Berton <riley.berton@circonus.com>
+Date:   Wed Jun 29 13:14:53 2016 +0000
+
+    initial checkin
+
+commit f923e69f01e708f79a4a81f6d487abe24c8f9423
+Author: Riley Berton <riley.berton@circonus.com>
+Date:   Tue Jun 28 21:31:11 2016 +0000
+
+    add README

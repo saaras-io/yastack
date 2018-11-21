@@ -1,0 +1,36 @@
+commit d5bc08a2c4c572e9bcff820aa125fe38ac3a3a42
+Author: Walter Schulze <awalterschulze@gmail.com>
+Date:   Fri Feb 23 16:10:32 2018 +0100
+
+    Update Readme.md
+
+commit f8f204fd5c977eb54d5a09f3bee74be9a169af67
+Author: Walter Schulze <awalterschulze@gmail.com>
+Date:   Thu Feb 22 19:44:22 2018 +0100
+
+    add new user : go-spacemesh
+
+commit b75782e777cfa7ca469bc46cc313ddd26e6e9d1c
+Author: Vladimir Skipor <vskipor@gmail.com>
+Date:   Thu Feb 15 14:03:51 2018 +0300
+
+    protoc-min-version don't suppress protoc stdout and stderr out on success. (#381)
+
+commit 73bcffaacdca6dd9e3e8bbec5147f24f29fb2cc4
+Author: Walter Schulze <awalterschulze@gmail.com>
+Date:   Sun Feb 11 16:45:09 2018 +0100
+
+    Update Readme.md
+
+commit 43a6153f8c1fc6068a7797e53f8a640222248e0e
+Author: Walter Schulze <awalterschulze@gmail.com>
+Date:   Thu Feb 8 21:01:35 2018 +0100
+
+    More well known types (#378)
+    
+    * more wtks
+    
+    * generating all types working
+    
+    * fix proto 2.6.1 for generated types
+

@@ -1,0 +1,125 @@
+commit 08a0d366073eacf800027725891c2f668f2f0144
+Author: Azat Khuzhin <a3at.mail@gmail.com>
+Date:   Tue Feb 27 21:12:14 2018 +0300
+
+    Fix base unlocking in event_del() if event_base_set() runned in another thread
+    
+    Image next situation:
+      T1:                                        T2:
+       event_del_()
+         lock the event.ev_base.th_base_lock
+         event_del_nolock_()                     event_set_base()
+         unlock the event.ev_base.th_base_lock
+    
+    In this case we will unlock the wrong base after event_del_nolock_()
+    returns, and deadlock is likely to happens, since event_base_set() do
+    not check any mutexes (due to it is possible to do this only if event is
+    not inserted anywhere).
+    
+    So event_del_() has to cache the base before removing the event, and
+    cached base.th_base_lock after.
+
+commit f0fd92f2c41fd5bf3b270ee338089dd9329d0354
+Author: Azat Khuzhin <a3at.mail@gmail.com>
+Date:   Tue Feb 27 21:08:35 2018 +0300
+
+    Convert event_debug_*() helpers from macros to static functions
+
+commit 1a448088e3aef5b6baf161eb0f6d17e18a77313c
+Author: stenn <stenn@ntp.org>
+Date:   Sun May 14 06:22:11 2017 -0400
+
+    Provide Makefile variables LIBEVENT_{CFLAGS,CPPFLAGS,LDFLAGS}
+    
+    This will allow a parent package to specify compiler, CPP, and linker
+    flags to a libevent built as a sub-package. Document this in
+    whatsnew-2.2.txt.
+    
+    Picked-from: #506
+    Closes: #506
+
+commit cd57e38c3f77d0f6a718d9c1f2e3ead78a98bd06
+Author: Azat Khuzhin <a3at.mail@gmail.com>
+Date:   Tue Feb 13 17:43:02 2018 +0300
+
+    http: remove message in case !Content-Length and Connection!=close
+    
+    Since [1] GET can have body, and hence for every incomming connection it
+    will print this error.
+    
+    [1] db483e3b002b33890fc88cadd77f6fd1fccad2d2 ("Allow bodies for
+    GET/DELETE/OPTIONS/CONNECT")
+    
+    Noticed-by: BotoX (irc)
+    Refs: #408
+
+commit 93913da1c4a528e0a832dc8dc163fa30f3e580d4
+Author: Azat Khuzhin <a3at.mail@gmail.com>
+Date:   Mon Feb 12 19:43:13 2018 +0300
+
+    buffer: fix incorrect unlock of the buffer mutex (for deferred callbacks)
+    
+    TSAN reports:
+      WARNING: ThreadSanitizer: unlock of an unlocked mutex (or by a wrong thread) (pid=17111)
+          #0 pthread_mutex_unlock /build/gcc/src/gcc/libsanitizer/sanitizer_common/sanitizer_common_interceptors.inc:3621 (libtsan.so.0+0x00000003b71c)
+          #1 evbuffer_add <null> (libevent_core-2.2.so.1+0x00000000ddb6)
+          ...
+    
+        Mutex M392 (0x7b0c00000f00) created at:
+          #0 pthread_mutex_init /build/gcc/src/gcc/libsanitizer/tsan/tsan_interceptors.cc:1117 (libtsan.so.0+0x0000000291af)
+          #1 <null> <null> (libevent_pthreads-2.2.so.1+0x000000000d46)
+          ...
+    
+    $ addr2line -e /lib/libevent_core-2.2.so.1 0x00000000ddb6
+    /src/libevent/buffer.c:1815 (discriminator 1)
+    
+    Introduced-in: ae2b84b2575be93d0aebba5c0b78453836f89f3c ("Replace
+    deferred_cbs with event_callback-based implementation.")
+
+commit f24b28e4aff1dbc3440e283f70ac15aa7cebcc8d
+Author: Dmitry Alimov <dvalimov@gmail.com>
+Date:   Mon Jan 15 17:30:08 2018 +0300
+
+    Fix typos in comments
+
+commit 61c21492680505706cad9240c39666ee3b56a89c
+Author: Azat Khuzhin <a3at.mail@gmail.com>
+Date:   Tue Jan 9 21:44:57 2018 +0300
+
+    http: fix leaks in evhttp_uriencode()
+    
+    Fixes: #584
+
+commit 416b48ba7a0b44407b7a053bd21830aa75d7162f
+Merge: 88a1abe cb6995c
+Author: Azat Khuzhin <a3at.mail@gmail.com>
+Date:   Thu Jan 4 19:28:59 2018 +0300
+
+    Merge branch 'listener-immediate-close'
+    
+    * listener-immediate-close:
+      test/listener: cover immediate-close logic
+      Immediately stop trying to accept more connections if listener disabled
+
+commit cb6995cf786855c082db542dd00b5fafa2ee4b4a
+Author: Azat Khuzhin <a3at.mail@gmail.com>
+Date:   Thu Jan 4 19:26:50 2018 +0300
+
+    test/listener: cover immediate-close logic
+
+commit e03cd0b7ebe196cc5c373daa5981ddaddf572bdc
+Author: John Fremlin <john@fremlin.org>
+Date:   Sun Dec 17 22:43:00 2017 -0500
+
+    Immediately stop trying to accept more connections if listener disabled
+    
+    This is a refined version of the logic previously in #578
+    
+    The rationale is that the consumer of sockets may wish to temporarily
+    delay accepting for some reason (e.g. being out of file-descriptors).
+    The kernel will then queue them up. The kernel queue is bounded and
+    programs like NodeJS will actually try to quickly accept and then close
+    (as the current behaviour before this PR).
+    
+    However, it seems that libevent should allow the user to choose whether
+    to accept and respond correctly if the listener is disabled.

@@ -1,0 +1,72 @@
+commit 5786f6d99a3760dd5094a67eff0b6c01eaf882f4
+Author: Brad House <brad@monetra.com>
+Date:   Sat Feb 24 07:31:08 2018 -0500
+
+    docs: Not all manpages are listed
+    
+    Some docs aren't installed or not showing up on
+    https://c-ares.haxx.se/docs.html
+    due to not being listed in Makefile.inc.  Add missing docs and
+    ensure docs are alphabetized.
+
+commit 17dc1b3102e0dfc3e7e31369989013154ee17893
+Author: Daniel Stenberg <daniel@haxx.se>
+Date:   Fri Feb 16 14:48:38 2018 +0100
+
+    ares_android.c: fix warning: ISO C forbids an empty translation unit
+
+commit 96bd1a2063748ae4043ee8de57579b9ff5c9b37e
+Author: Daniel Stenberg <daniel@haxx.se>
+Date:   Fri Feb 16 14:42:27 2018 +0100
+
+    RELEASE-NOTES: some more work we did and people who helped
+
+commit 349fe118b62b3f4abff758bac7df53ed0ecd3fbe
+Author: Brad House <brad@monetra.com>
+Date:   Fri Feb 16 06:52:07 2018 -0500
+
+    travis: skip Autotools style testing for cmake
+    
+    Fix cmake test build by skipping autotools portion of test script.
+
+commit 58582cd6ae2228e71d23afd1157d9f2418e360e5
+Author: Brad House <brad@monetra.com>
+Date:   Fri Feb 16 06:49:39 2018 -0500
+
+    travis: standardize CMake test off of Autotools tests
+    
+    Instead of running 'make test', run the tests directly like autotools
+    does.  It provides more verbose output.
+
+commit 84b345661675eac7d0e51143fe33c7663c36c319
+Author: Brad House <brad@monetra.com>
+Date:   Fri Feb 16 06:20:16 2018 -0500
+
+    travis: Enable building tests for CMake
+    
+    Travis should auto-build and run tests for cmake builds now that
+    PR #168 is merged.
+
+commit 24c54e810aa1f9b2b99f28f4a072646f86440369
+Author: Brad House <brad@monetra.com>
+Date:   Thu Feb 15 20:42:27 2018 -0500
+
+    fix version in pkgconfig
+
+commit 4f44016a2fb00f33b389f8e6ac7e5e6531998d7d
+Author: Brad House <brad@monetra.com>
+Date:   Thu Feb 15 20:38:38 2018 -0500
+
+    Add version update to CMakeLists in maketgz
+
+commit ca9ccb939567e1485a2cb528b8b16a0b1bc8afb9
+Author: Brad House <brad@monetra.com>
+Date:   Thu Feb 15 20:29:12 2018 -0500
+
+    Release prep.  Add support for pkgconfig in cmake, set versions appropriately
+
+commit a915d0adc603769358c7a460d4ddd50e1b37ce52
+Author: Gregor Jasny <gjasny@googlemail.com>
+Date:   Sat Dec 30 18:20:02 2017 +0100
+
+    CMake: Add tests

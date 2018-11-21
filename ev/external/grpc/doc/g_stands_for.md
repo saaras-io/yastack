@@ -1,0 +1,16 @@
+'g' stands for something different every gRPC release:
+
+- 1.0 'g' stands for ['gRPC'](https://github.com/grpc/grpc/tree/v1.0.x)
+- 1.1 'g' stands for ['good'](https://github.com/grpc/grpc/tree/v1.1.x)
+- 1.2 'g' stands for ['green'](https://github.com/grpc/grpc/tree/v1.2.x)
+- 1.3 'g' stands for ['gentle'](https://github.com/grpc/grpc/tree/v1.3.x)
+- 1.4 'g' stands for ['gregarious'](https://github.com/grpc/grpc/tree/v1.4.x)
+- 1.6 'g' stands for ['garcia'](https://github.com/grpc/grpc/tree/v1.6.x)
+- 1.7 'g' stands for ['gambit'](https://github.com/grpc/grpc/tree/v1.7.x)
+- 1.8 'g' stands for ['generous'](https://github.com/grpc/grpc/tree/v1.8.x)
+- 1.9 'g' stands for ['glossy'](https://github.com/grpc/grpc/tree/v1.9.x)
+- 1.10 'g' stands for ['glamorous'](https://github.com/grpc/grpc/tree/v1.10.x)
+- 1.11 'g' stands for ['gorgeous'](https://github.com/grpc/grpc/tree/v1.11.x)
+- 1.12 'g' stands for ['glorious'](https://github.com/grpc/grpc/tree/v1.12.x)
+- 1.13 'g' stands for ['gloriosa'](https://github.com/grpc/grpc/tree/v1.13.x)
+- 1.14 'g' stands for ['gladiolus'](https://github.com/grpc/grpc/tree/master)

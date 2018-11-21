@@ -1,0 +1,60 @@
+set(ff_dir                      ${CMAKE_SOURCE_DIR}/fs)
+set(ev_dir                      ${CMAKE_SOURCE_DIR}/ev)
+set(ev_external_dir             ${CMAKE_SOURCE_DIR}/ev/external)
+set(ev_binary_dir               ${CMAKE_BINARY_DIR}/ev)
+set(ev_binary_external_dir      ${CMAKE_BINARY_DIR}/ev/external)
+set(fs_binary_libevent_dir      ${CMAKE_BINARY_DIR}/fs/app/libevent/include/)
+set(fs_libevent_dir             ${CMAKE_SOURCE_DIR}/fs/app/libevent/include/)
+
+include_directories(${ev_dir}/source)
+include_directories(${ev_dir}/include)
+include_directories(${ev_external_dir}/abseil-cpp/)
+include_directories(${ev_external_dir}/libcircllhist/src/)
+include_directories(${ev_external_dir}/rapidjson/include/)
+include_directories(${ev_external_dir}/yaml-cpp/include/)
+include_directories(${ev_external_dir}/protoc-gen-validate/)
+include_directories(${ev_external_dir}/opentracing-cpp/include/)
+# health.pb.h includes third_party/naonpb/pb.h
+include_directories(${ev_external_dir}/grpc/)
+include_directories(${ev_external_dir}/cctz/include/)
+include_directories(${ev_external_dir}/grpc/include/)
+include_directories(${ev_external_dir}/spdlog/include/)
+include_directories(${ev_external_dir}/fmt-4.1.0/)
+include_directories(${ev_external_dir}/http-parser/)
+include_directories(${ev_external_dir}/grpc-httpjson-transcoding/src/include/)
+include_directories(${ev_external_dir}/googletest/googletest/include/)
+include_directories(${ev_external_dir}/nghttp2-1.30.0/lib/includes/)
+include_directories(${ev_external_dir}/luajit-2.0/src/)
+include_directories(${ev_external_dir}/opentracing-cpp/3rd_party/include/)
+include_directories(${ev_external_dir}/lightstep-tracer-cpp/include/)
+include_directories(${ev_external_dir}/boringssl/include/)
+# Remove includes for libevent here to avoid confusion
+#include_directories(${ev_external_dir}/libevent/include/)
+include_directories(${ev_external_dir}/grpc/third_party/cares/cares/)
+include_directories(${ev_external_dir}/grpc/third_party/protobuf/src/)
+include_directories(${ev_external_dir}/grpc/third_party/nanopb/)
+include_directories(${ev_external_dir}/tclap/include/)
+include_directories(${ev_external_dir}/backward-cpp/)
+include_directories(${ev_external_dir}/jwt_verify_lib)
+include_directories(${fs_libevent_dir})
+
+#Generated file that need inculsion
+include_directories(${CMAKE_BINARY_DIR}/include/)
+include_directories(${CMAKE_BINARY_DIR}/include/api/)
+include_directories(${ev_binary_external_dir}/opentracing-cpp/include/)
+include_directories(${ev_binary_external_dir}/libevent/include/)
+include_directories(${ev_binary_external_dir}/grpc/third_party/cares/cares/)
+include_directories(${fs_binary_libevent_dir})
+
+#include ff
+include_directories(${ff_dir}/lib/)
+
+
+#Maybe needed
+#source/common/upstream includes health.pb.h file
+#include_directories(${CMAKE_SOURCE_DIR}/external/grpc/src/cpp/server/health)
+#include_directories(${CMAKE_SOURCE_DIR}/external/data-plane-api/bazel-genfiles/)
+#include_directories(${CMAKE_SOURCE_DIR}/external/data-plane-api/bazel-genfiles/external/com_lyft_protoc_gen_validate/)
+#include_directories(${CMAKE_SOURCE_DIR}/external/data-plane-api/bazel-genfiles/external/com_github_gogo_protobuf/)
+#include_directories(${CMAKE_SOURCE_DIR}/external/data-plane-api/bazel-genfiles/external/googleapis/)
+#include_directories(${CMAKE_SOURCE_DIR}/external/protobuf-3.5.0/src/)

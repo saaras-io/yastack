@@ -1,0 +1,50 @@
+set(CMAKE_C_FLAGS "-D_GNU_SOURCE -ggdb")
+#set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c++1y")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c++14")
+add_definitions(${CMAKE_C_FLAGS})
+
+get_filename_component(leaf ${CMAKE_CURRENT_SOURCE_DIR} NAME)
+
+# /a/b/c/d -> d
+get_filename_component(parent_dir                       ${CMAKE_CURRENT_SOURCE_DIR} NAME)
+# /a/b/c/d -> /a/b/c
+get_filename_component(parent_parent_full_dir           ${CMAKE_CURRENT_SOURCE_DIR} DIRECTORY)
+
+# /a/b/c -> c
+get_filename_component(parent_parent_dir                ${parent_parent_full_dir} NAME)
+# /a/b/c -> /a/b
+get_filename_component(parent_parent_parent_full_dir    ${parent_parent_full_dir} DIRECTORY)
+
+# /a/b -> b
+get_filename_component(parent_parent_parent_dir         ${parent_parent_parent_full_dir} NAME)
+# /a/b -> /a
+get_filename_component(parent_parent_parent_parent_full_dir  ${parent_parent_parent_full_dir} DIRECTORY)
+
+get_filename_component(parent_parent_parent_parent_dir         ${parent_parent_parent_parent_full_dir} NAME)
+get_filename_component(parent_parent_parent_parent_parent_full_dir         ${parent_parent_parent_parent_full_dir} DIRECTORY)
+
+
+get_filename_component(parent_parent_parent_parent_parent_dir         ${parent_parent_parent_parent_parent_full_dir} NAME)
+
+# falcon/ev sets project name to ev
+# falcon/ev/source sets project name to ev-source
+# falcon/ev/source/exe sets project name to ev-source-exe
+# Note that the recursion to build a name stops at name 'falcon',
+# 'falcon' will never be a part of target name, the checks below ensure that.
+
+if (${parent_parent_dir} MATCHES "^ev$")
+    set(project_name    ${parent_parent_dir}-${parent_dir})
+elseif (${parent_parent_parent_dir} MATCHES "^ev$")
+    set(project_name    ${parent_parent_parent_dir}-${parent_parent_dir}-${parent_dir})
+elseif (${parent_parent_parent_parent_dir} MATCHES "^ev$")
+    set(project_name    ${parent_parent_parent_parent_dir}-${parent_parent_parent_dir}-${parent_parent_dir}-${parent_dir})
+elseif (${parent_parent_parent_parent_parent_dir} MATCHES "^ev$")
+    set(project_name   ${parent_parent_parent_parent_parent_dir}-${parent_parent_parent_parent_dir}-${parent_parent_parent_dir}-${parent_parent_dir}-${parent_dir})
+else (${parent_parent_dir} MATCHES "^ev$")
+    set(project_name   ${parent_parent_parent_parent_parent_dir}-${parent_parent_parent_parent_dir}-${parent_parent_parent_dir}-${parent_parent_dir}-${parent_dir})
+endif (${parent_parent_dir} MATCHES "^ev$")
+
+# project_name -> b-c-d
+message(STATUS "Building project ${project_name}")
+
+project(${project_name} CXX)

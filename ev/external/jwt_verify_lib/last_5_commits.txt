@@ -1,0 +1,39 @@
+commit 66792a057ec54e4b75c6a2eeda4e98220bd12a9a
+Merge: 6e8f117 de5d8fe
+Author: Wayne Zhang <qiwzhang@gmail.com>
+Date:   Thu Aug 16 16:05:43 2018 -0700
+
+    Merge pull request #17 from ThalesIgnite/master
+    
+    Added audience verification code and tests
+
+commit de5d8fe657046145fe5a138f9012bfd8c09d5bed
+Author: Nick A. Smith <nick.a.smith@thales-esecurity.com>
+Date:   Thu Aug 16 23:37:57 2018 +0100
+
+    Code style fixes
+
+commit b53f463e0413d9bcf50c70dd0ad4733866169255
+Author: Nick A. Smith <nick.a.smith@thales-esecurity.com>
+Date:   Thu Aug 16 23:34:57 2018 +0100
+
+    Updates from PR review
+    
+    Improve documentation of audience verification.
+    Added test cases to cover changes.
+
+commit d83fe27e1a3e03f85cd9b15b862461acf228269f
+Author: Nick A. Smith <nick.a.smith@thales-esecurity.com>
+Date:   Thu Aug 16 21:23:04 2018 +0100
+
+    Fixes from PR review
+    
+    Removed unnecessary typedef.
+    Used CheckAudience class for verifying "aud" claim.
+    Re-run check-style.
+
+commit 079639d63fd47851f1d4546b940c2a8c28de5de0
+Author: Nick A. Smith <nick.a.smith@thales-esecurity.com>
+Date:   Thu Aug 16 16:27:24 2018 +0100
+
+    Fixed formatting to be compliant with code standard
