@@ -8,6 +8,7 @@ Install dependencies
 	sudo apt-get install libnuma-dev
 	sudo apt-get install gawk
 	sudo apt-get install linux-headers-$(uname -r)
+	sudo apt-get install libc-ares-dev
 
 Install latest version of cmake (https://cmake.org/download/)
 
