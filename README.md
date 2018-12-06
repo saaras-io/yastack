@@ -1,3 +1,5 @@
+[![Build Status](https://dev.azure.com/saaras-io/test/_apis/build/status/saaras-io.yastack)](https://dev.azure.com/saaras-io/test/_build/latest?definitionId=4)
+
 ![](yastack.png)
 
 # yastack
