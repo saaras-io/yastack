@@ -143,9 +143,11 @@ add_custom_target(target_gen
 
 find_program(py python)
 
+set (gen_protobuf_incl  ${CMAKE_SOURCE_DIR}/ev/external/protobuf-3.5.0/src)
+
 add_custom_command(OUTPUT ${gen_output}/metrics.pb.h
     DEPENDS target_copy
-    COMMAND ${py} ${gen_script} --generate --include='-I ${gen_protos_incl}' --output=${gen_output} --recurse-start-dir=${gen_protos_incl}
+    COMMAND ${py} ${gen_script} --generate --include='-I ${gen_protos_incl} -I ${gen_protobuf_incl}' --output=${gen_output} --recurse-start-dir=${gen_protos_incl}
 
 	# purge un-necessary files.
 	# the protoc-gen-validate generates validation rules for ALL protobufs.
