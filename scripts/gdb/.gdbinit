@@ -36,6 +36,35 @@ define break_ena_debug
     break ena_com_get_dev_attr_feat
 end
 
+define break_journey_of_a_packet_in
+    break ether_input
+    break ip_input
+    break tcp_input
+    break listener_read_cb
+    break evutil_accept4_
+    break ff_accept
+    break Envoy::Network::ListenerImpl::listenCallback
+    break Envoy::Network::ConnectionImpl::onFileEvent
+    break Envoy::Network::ConnectionImpl::onReadReady
+end
+
+define break_journey_of_a_packet_out
+    break ether_output
+    break ip_output
+    break tcp_output
+    break Envoy::Network::ConnectionImpl::onFileEvent
+    break ff_write
+end
+
+define break_journey_of_a_packet_with_ssl
+    break Envoy::Ssl::SslSocket::doRead
+    break Envoy::Ssl::SslSocket::doWrite
+    break Envoy::Ssl::SslSocket::doHandshake
+    break bssl::tls_write_buffer_flush
+    break BIO_write
+    break BIO_read
+end
+
 directory /home/ubuntu/falcon/fs/tools/netstat:/home/ubuntu/falcon/fs/tools:/home/ubuntu/falcon/fs:/home/ubuntu/falcon/dpdk:/home/ubuntu/falcon/dpdk/lib:/home/ubuntu/falcon/fs/example:/home/ubuntu/falcon/fs/lib:/home/ubuntu/falcon/fs/app:/home/ubuntu/falcon/fs/app/libevent:/home/ubuntu/falcon/fs/app/libevent/sample
 
 # source shared_ptr.gdb
