@@ -9,9 +9,26 @@ Install dependencies
 	sudo apt-get install gawk
 	sudo apt-get install linux-headers-$(uname -r)
 	sudo apt-get install libc-ares-dev
+	sudo apt-get install python
+	sudo apt-get install libz-dev
 
 Install latest version of cmake (https://cmake.org/download/)
+-------------------------------------------------------------
+wget https://github.com/Kitware/CMake/releases/download/v3.14.2/cmake-3.14.2.tar.gz
+tar -xvzf cmake-3.14.2.tar.gz
+cd cmake-3.14.2/ && ./bootstrap && make && sudo make install
 
+Install golang
+--------------
+
+Install protobuf-3.5.0 dependencies
+-----------------------------------
+sudo apt-get install autoconf automake libtool curl make g++ unzip
+
+Install protoc from yastack/ev/external/protobuf-3.5.0
+------------------------------------------------------
+clone yastack: git clone https://github.com/saaras-io/yastack
+cd $HOME/yastack/ev/external/protobuf-3.5.0 && ./autogen.sh && ./configure && make && make check && sudo make install && sudo ldconfig
 
 Install protoc-gen-validate
 ---------------------------
