@@ -12,6 +12,8 @@ Install dependencies
 	sudo apt-get install python
 	sudo apt-get install libz-dev
 
+ We've used gcc 5.4.0 to build this project.
+
 Install latest version of cmake (https://cmake.org/download/)
 -------------------------------------------------------------
 wget https://github.com/Kitware/CMake/releases/download/v3.14.2/cmake-3.14.2.tar.gz
