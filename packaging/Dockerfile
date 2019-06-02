@@ -36,7 +36,6 @@ RUN tar -xvzf cmake-3.14.2.tar.gz
 RUN cd cmake-3.14.2/ && ./bootstrap && make && make install
 
 # Copy static binaries protoc and protoc-gen-validate
-COPY protoc /bin
 COPY protoc-gen-validate /bin 
 
 # DPDK uses kernel headers to build igb_uio
