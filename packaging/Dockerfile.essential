@@ -1,0 +1,44 @@
+ARG DPDK_VERSION=18.05
+ARG OS_VER=18.10
+FROM ubuntu:${OS_VER}
+
+RUN apt-get update && apt-get install -y \
+    g++-5 \
+    gcc-5 \
+	libnuma-dev \
+    linux-headers-$(uname -r) \
+    autoconf \
+    make \
+    automake \
+    ethtool \
+    net-tools \
+    wget \
+    unzip \
+    tar \
+    tree \
+    git \
+    libunwind8 \
+    apt-transport-https \
+    libtool \
+    gawk \
+    libc-ares-dev \
+    python \
+    libz-dev \
+    golang-go \
+    curl \
+    && rm -rf /var/lib/apt/lists/* 
+
+RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 10 \
+update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 20 \
+update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 10 \
+update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 20 \
+update-alternatives --install /usr/bin/cc cc /usr/bin/gcc 30 \
+update-alternatives --set cc /usr/bin/gcc \
+update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++ 30 \
+update-alternatives --set c++ /usr/bin/g++ \
+
+
+RUN wget https://github.com/Kitware/CMake/releases/download/v3.14.2/cmake-3.14.2.tar.gz
+RUN tar -xvzf cmake-3.14.2.tar.gz
+RUN cd cmake-3.14.2/ && ./bootstrap && make && make install
+RUN rm cmake-3.14.2.tar.gz
