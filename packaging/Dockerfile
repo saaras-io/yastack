@@ -28,6 +28,9 @@ python \
 libz-dev \
 golang-go \
 curl \
+kmod \
+pciutils \
+vim \
 && rm -rf /var/lib/apt/lists/* 
 
 # Install cmake
@@ -43,5 +46,7 @@ COPY protoc-gen-validate /bin
 # Download yastack and compile it
 RUN cd / && git clone https://github.com/saaras-io/yastack.git
 RUN cd /yastack/ev/external/protobuf-3.5.0 && ./autogen.sh && ./configure && make && make check && make install && ldconfig
+# Do not include tests for packaging
+RUN cd /yastack/ev/ && sed -i 's/\(add_subdirectory(test)\)/#\1/' CMakeLists.txt
 RUN cd /yastack && mkdir -p build && cd /yastack/build && cmake ..
-#RUN cd /yastack/build/ && make -s
+RUN cd /yastack/build/ && make -s

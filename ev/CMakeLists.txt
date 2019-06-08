@@ -74,5 +74,4 @@ add_subdirectory(source/exe)
 
 # Testing
 #add_subdirectory(test/test_common)
-#add_subdirectory(test)
 add_subdirectory(test)
