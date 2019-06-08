@@ -28,17 +28,25 @@ RUN apt-get update && apt-get install -y \
     curl \
     && rm -rf /var/lib/apt/lists/* 
 
-RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 10 \
-update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 20 \
-update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 10 \
-update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 20 \
-update-alternatives --install /usr/bin/cc cc /usr/bin/gcc 30 \
-update-alternatives --set cc /usr/bin/gcc \
-update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++ 30 \
-update-alternatives --set c++ /usr/bin/g++ \
+RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 10  
+RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 20 
+RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 10 
+RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 20 
+RUN update-alternatives --install /usr/bin/cc cc /usr/bin/gcc 30
+RUN update-alternatives --set cc /usr/bin/gcc 
+RUN update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++ 30 
+RUN update-alternatives --set c++ /usr/bin/g++
 
 
 RUN wget https://github.com/Kitware/CMake/releases/download/v3.14.2/cmake-3.14.2.tar.gz
 RUN tar -xvzf cmake-3.14.2.tar.gz
 RUN cd cmake-3.14.2/ && ./bootstrap && make && make install
 RUN rm cmake-3.14.2.tar.gz
+
+# # Install cmake
+RUN wget https://github.com/Kitware/CMake/releases/download/v3.14.2/cmake-3.14.2.tar.gz
+RUN tar -xvzf cmake-3.14.2.tar.gz
+RUN cd cmake-3.14.2/ && ./bootstrap && make && make install
+
+# # Copy static binaries protoc and protoc-gen-validate
+COPY protoc-gen-validate /bin 
