@@ -1,93 +1,22 @@
-Install dependencies
---------------------
+Requirements
+------------
+- YAStack needs 128G of free hard disk space.
+- YAStack builds a container using docker. Docker should be preinstalled on
+  the system
+- We've used gcc 5.4.0 to build this project. When installing gcc using
+  ubutntu apt-get tool, that is the one that gets installed.
+- At-least two NICs - one for management and one for data. The data NIC
+  is the one that will be used by YAStack. We'll remove this requirement
+  in the future once KNI support has been tested.
 
-	sudo apt-get install autoconf
-	sudo apt-get install make
-	sudo apt-get install libunwind8 apt-transport-https
-	sudo apt-get install -y git autoconf automake libtool make g++ unzip
-	sudo apt-get install libnuma-dev
-	sudo apt-get install gawk
-	sudo apt-get install linux-headers-$(uname -r)
-	sudo apt-get install libc-ares-dev
-	sudo apt-get install python
-	sudo apt-get install libz-dev
+Download YAStack source code
+----------------------------
+git clone https://github.com/saaras-io/yastack
 
- We've used gcc 5.4.0 to build this project.
-
-Install latest version of cmake (https://cmake.org/download/)
--------------------------------------------------------------
-wget https://github.com/Kitware/CMake/releases/download/v3.14.2/cmake-3.14.2.tar.gz
-tar -xvzf cmake-3.14.2.tar.gz
-cd cmake-3.14.2/ && ./bootstrap && make && sudo make install
-
-Install golang
---------------
-
-Install protobuf-3.5.0 dependencies
------------------------------------
-sudo apt-get install autoconf automake libtool curl make g++ unzip
-
-Install protoc from yastack/ev/external/protobuf-3.5.0
-------------------------------------------------------
-clone yastack: git clone https://github.com/saaras-io/yastack
-cd $HOME/yastack/ev/external/protobuf-3.5.0 && ./autogen.sh && ./configure && make && make check && sudo make install && sudo ldconfig
-
-Install protoc-gen-validate
----------------------------
-
-protoc-gen-validate is a tool that is written in golang.
-
-If you are using the latest version of golang as of writing this [2018-11],
-you don't need to set environment variable GOPATH. Golang uses the directory
-$HOME/go by default.
-
-Fetch the repository in $HOME/go
-
-	go get -d github.com/lyft/protoc-gen-validate
-
-Change directory to -
-
-	$HOME/go/src/github.com/lyft/protoc-gen-validate
-
-Checkout 0.0.6 version of the repository
-
-	git checkout v0.0.6
-
-Build the project
-	
-	make build 
-
-Check binary is present in $HOME/go/bin
-
-Update path to make the binary available to other programs
-
-	export PATH=$PATH:$HOME/go/bin
-
-
-Build yastack source code
---------------------------
-
-clone yastack
-	
-	git clone https://github.com/saaras-io/yastack.git
-
-Go to the root directory of yastack.
-
-yastack uses CMake. Create a directory to build the image.
-
-	mkdir -p build
-
-Change directory to newly created directory build
-
-	cd build
-
-Invoke cmake to generate Makefiles
-
-	cmake ..
-
-Run make to build source
-	
-	make VERBOSE=1
+Build a container to recreate YAStack environment and build source code
+-----------------------------------------------------------------------
+cd yastack/packaging
+./docker_build_container.sh
 
 Generate certs for listener
 ---------------------------
