@@ -17,10 +17,15 @@ Build a container to recreate YAStack environment and build source code
 -----------------------------------------------------------------------
 cd yastack/packaging
 ./docker_build_container.sh
+sudo docker images
+
+Run docker container
+--------------------
+./docker_run_cmd.sh
 
 Generate certs for listener
 ---------------------------
-	export PATH_TO_YASTACK_ROOT=/home/ubuntu/yastack
+	export PATH_TO_YASTACK_ROOT=/yastack
 	$PATH_TO_YASTACK_ROOT/scripts/self_signed_cert.sh yastack.app 2048
 
 This should create files yastack.app.key and yastack.app.cert
