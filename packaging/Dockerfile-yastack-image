@@ -1,4 +1,8 @@
-FROM quay.io/fbalicchia/ubuntu-1810:latest
+ARG YASTACK_BASE_IMAGE=yastack/ubuntu
+ARG BASE_VER=18.04
+
+
+FROM ${YASTACK_BASE_IMAGE}:${BASE_VER}
 
 RUN cd / && git clone https://github.com/saaras-io/yastack.git
 RUN cd /yastack/ev/external/protobuf-3.5.0 && ./autogen.sh && ./configure && make && make check && make install && ldconfig

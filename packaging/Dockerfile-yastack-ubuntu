@@ -1,5 +1,5 @@
 ARG DPDK_VERSION=18.05
-ARG OS_VER=18.10
+ARG OS_VER=18.04
 FROM ubuntu:${OS_VER}
 
 RUN apt-get update && apt-get install -y \
@@ -25,6 +25,7 @@ RUN apt-get update && apt-get install -y \
     python \
     libz-dev \
     golang-go \
+    rsync \
     curl \
     && rm -rf /var/lib/apt/lists/* 
 
