@@ -8,6 +8,9 @@ Requirements
 - At-least two NICs - one for management and one for data. The data NIC
   is the one that will be used by YAStack. We'll remove this requirement
   in the future once KNI support has been tested.
+- An external machine to send traffic to the data NIC. In case of AWS,
+  if an elastic IP is attached to the data NIC, traffic can be generated
+  from any internet machine.
 
 Download YAStack source code
 ----------------------------
