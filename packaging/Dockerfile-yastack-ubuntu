@@ -1,12 +1,14 @@
 ARG DPDK_VERSION=18.05
-ARG OS_VER=18.10
+ARG OS_VER=18.04
 FROM ubuntu:${OS_VER}
+#linux-headers-$(uname -r) \
+
+RUN apt-get update && apt-get install -y linux-headers-$(uname -r)
 
 RUN apt-get update && apt-get install -y \
     g++-5 \
     gcc-5 \
-	libnuma-dev \
-    linux-headers-$(uname -r) \
+    libnuma-dev \
     autoconf \
     make \
     automake \
@@ -25,7 +27,11 @@ RUN apt-get update && apt-get install -y \
     python \
     libz-dev \
     golang-go \
+    rsync \
     curl \
+    kmod \
+    pciutils \
+    vim \
     && rm -rf /var/lib/apt/lists/* 
 
 RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 10  
